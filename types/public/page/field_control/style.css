@@ -1,0 +1,105 @@
+/*
+    Stylesheet for the field control page.
+
+    @since 2.0
+*/
+
+
+#types-page-content .sort-icon-inactive {
+    color: #ccc !important;
+}
+
+#types-page-content table.wp-list-table td.manage-column > a.sort-column {
+    cursor: pointer;
+}
+
+/*
+    Table row styling
+*/
+
+#types-page-content .row-actions > span > a {
+    cursor: pointer;
+}
+
+#types-page-content tbody > tr.types-field-not-managed-by-types {
+    background-color: #E0EFFF;
+}
+
+#types-page-content tbody > tr.types-field-not-used-in-groups {
+    background-color: #FFE0E0;
+}
+
+
+/*
+    Spinner image before the page is fully loaded.
+
+    Center horizontally and vertically.
+*/
+
+#types-page-content .types-listing-spinner {
+    height: 400px;
+    position: relative;
+}
+
+#types-page-content .types-listing-spinner > img {
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+
+/*
+    Dialog styling.
+*/
+
+.types-delete-button {
+    background-color: #FF4444 !important;
+    border-color: #DE2020 !important;
+    box-shadow: #DE2020 0 1px 0 0 !important;
+
+    text-shadow:0 -1px 1px red, 1px 0 1px red, 0 1px 1px red, -1px 0 1px red !important;
+}
+
+
+button.types-highlighted-border {
+    border: orangered 2px solid !important;
+}
+
+button.types-highlighted-border:active,
+button.types-highlighted-border:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* We're overriding !important here. */
+.wp-core-ui .types-choose-field-type-button.button:disabled,
+.wp-core-ui .types-choose-field-type-button.button[disabled] {
+    color: #DAE0E6 !important;
+}
+
+.wpcf-choose-field .wpcf-form-button[disabled]:hover i {
+    color: #DAE0E6;
+}
+
+/* Override styling from basic.css back to default. */
+body.wp-admin button.ui-corner-all {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+/* Fix for disabled non-FontAwesome icons. */
+.wpcf-choose-field .wpcf-form-button[disabled] i.types-field-icon {
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+
+/* Handle too long dialog titles. */
+.ui-dialog-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+}

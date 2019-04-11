@@ -1,0 +1,315 @@
+/* General */
+.types-table-row {
+    display: table-row;
+}
+
+.types-table-cell {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.types-button,
+.types-button:hover,
+.types-button:focus,
+.types-button:visited,
+.wp-core-ui .types-button.button-primary,
+.wp-core-ui .types-button.button-primary:hover,
+.wp-core-ui .types-button.button-primary:focus,
+.wp-core-ui .types-button.button-primary:visited {
+    background: #f05a28;
+    border-color: #ed4e26;
+    box-shadow: 0 1px 0 #ed4e26;
+    text-shadow: 0 -1px 1px #ed4e26, 1px 0 1px #ed4e26, 0 1px 1px #ed4e26, -1px 0 1px #ed4e26;
+}
+
+.wp-core-ui .types-information .button,
+.wp-core-ui .types-information .button-primary,
+.wp-core-ui .types-information .button-secondary {
+    height: 26px;
+    line-height: 24px;
+    font-size: 12px;
+}
+
+.types-button:hover,
+.wp-core-ui .types-button.button-primary:hover {
+    background-color: #ed4e26;
+}
+
+.types-warning,
+.postbox.types-warning {
+    background-color: #fffece;
+}
+
+/* Table in Meta Box */
+#poststuff .types-table-in-meta-box .inside,
+.types-table-in-meta-box .inside {
+    padding: 15px;
+    margin: 0;
+}
+
+.types-table-in-meta-box table {
+    border-collapse: collapse;
+    height: 100%;
+}
+
+.types-table-in-meta-box tbody {
+    vertical-align: top;
+    height: 100%;
+}
+
+.types-table-in-meta-box th {
+    text-align: center;
+    padding: 0 0 10px;
+}
+
+.types-table-in-meta-box td {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    border: 1px solid #ececec;
+    overflow: hidden;
+}
+
+a.types-external-link {
+    padding-right: 15px;
+}
+a.types-external-link:after {
+    content: "\f504";
+    display: inline-block;
+    width: 15px;
+    margin-right: -15px;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: dashicons;
+    text-decoration: none;
+    font-weight: normal;
+    font-style: normal;
+    vertical-align: top;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a.types-button.types-external-link:after {
+    vertical-align: text-top;
+    padding-right: 10px;
+}
+
+/* Specific to informations */
+.types-information p {
+    font-size: 12px;
+    text-align: left;
+}
+
+.types-information .types-information-link {
+    text-align: center;
+}
+
+.types-information-td-inner {
+    height: 100%;
+    padding: 5px 10px;
+}
+
+.types-information-important {
+    background-color: #fffece;
+}
+
+.types-information-important p {
+    text-align: center;
+}
+
+.types-information-important p:first-child {
+    padding-left: 30px;
+    text-align: left;
+}
+.types-information-important p:first-child:before {
+    margin-left: -32px;
+    color: #a00;
+    content: "\f122";
+    display: block;
+    width: 20px;
+    height: 0;
+    font-size: 25px;
+    line-height: 1;
+    font-family: 'onthegosystems-icons';
+    text-decoration: inherit;
+    font-weight: normal;
+    font-style: normal;
+    vertical-align: top;
+    text-align: center;
+    -webkit-transition: color .1s ease-in 0;
+    transition: color .1s ease-in 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.types-information ul {
+    list-style: disc;
+    margin-left: 25px;
+}
+.types-message-icon.types-table-cell,
+.types-message-content.types-table-cell {
+    height: 90px;
+}
+
+.types-message-icon {
+    padding: 0 25px 0 15px;
+    text-align: center;
+}
+
+.types-message-icon .dashicons,
+.types-message-icon .icon-toolset-logo {
+    color: #f05a28;
+    font-size: 60px;
+    width: 60px;
+    margin-top: 15px;
+}
+
+.types-message-icon .icon-toolset-logo {
+    font-size: 80px;
+    width: auto;
+    margin-top: -15px;
+}
+
+/* Pointer */
+.types-pointer-inner .types-information-paragraph {
+    padding-right: 30px;
+}
+
+.types-information-pointer .wp-pointer-buttons {
+    padding: 0;
+}
+
+.types-information-pointer.wp-pointer-bottom .wp-pointer-arrow {
+    left: auto;
+    right: 50px;
+}
+
+/* Toolset Dashboard */
+div.toolset-dashboard {
+    margin-top: 25px;
+}
+
+div.toolset-dashboard .types-information-paragraph {
+    text-align: center;
+}
+
+div.toolset-dashboard .types-information-important .types-information-paragraph {
+    text-align: left;
+}
+
+div.toolset-dashboard table td p > a,
+div.toolset-dashboard table td li > a {
+    text-decoration: none !important;
+}
+
+div.toolset-dashboard table ul {
+    margin-left: 15px;
+}
+
+div.toolset-dashboard table ul li {
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+div.toolset-dashboard .types-information-important {
+    background: transparent;
+}
+
+/*
+div.toolset-dashboard .types-information-important p:first-child a:before {
+    margin-left: -45px;
+}
+
+div.toolset-dashboard .types-information-important p:first-child:before {
+    content: '';
+}
+
+div.toolset-dashboard .types-information-important p:first-child {
+    padding-left: 0;
+    text-align: center;
+}
+*/
+
+div.toolset-dashboard div.types-information table {
+    border-collapse: collapse;
+}
+div.toolset-dashboard div.types-information table th,
+div.toolset-dashboard div.types-information table td {
+    border: 1px solid #cacaca;
+    vertical-align: middle;
+}
+
+div.toolset-dashboard div.types-information table th:nth-child(3),
+div.toolset-dashboard div.types-information table td:nth-child(3) {
+    border-right-color: #000;
+}
+
+div.toolset-dashboard div.types-information thead tr:first-child th {
+    color: #fff;
+    background-color: #999999;
+    border-color: #000;
+    font-size: 14px;
+    padding: 8px 0;
+}
+
+div.toolset-dashboard div.types-information thead tr:first-child th:last-child {
+    background-color: #000;
+}
+
+div.toolset-dashboard div.types-information thead tr:last-child th {
+    font-size: 14px;
+    padding: 12px 0;
+}
+
+div.toolset-dashboard div.types-information tbody tr {
+    background: #fff;
+}
+div.toolset-dashboard div.types-information tbody tr:nth-child(2n) {
+    background: #f9f9f9;
+}
+
+div.toolset-dashboard .types-information-paragraph.toolset-dashboard-post-type {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* DELETE START
+@todo Update Toolset logo in otgs-icon-font and delete the following afterwards */
+.types-message-icon .icon-toolset-logo:before {
+    content: '';
+}
+
+.types-message-icon .icon-toolset-logo {
+    height: 100px;
+    width: 100px;
+    margin-top: 2px;
+    display: block;
+    background: transparent url( '../img/toolset-logo-no-margin.png' ) no-repeat;
+    background-size: contain;
+}
+/* DELETE END */
+
+.types-message-button-right {
+    position: absolute;
+    bottom: 23px;
+    right: 20px;
+}
+
+.types-message-dialog-button {
+    display: block;
+    text-align: right;
+}
+
+#types-feedback {
+    min-height: 0 !important;
+}
+.types-feedback .ui-dialog-titlebar {
+    border: 0;
+    background: inherit;
+    height: 8px;
+}
+
+/* todo remove once placeholders are rendered before twig rendering */
+.types-information-td-inner a[href=""] {
+    display: none;
+}
