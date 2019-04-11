@@ -1,0 +1,141 @@
+// COLORS
+$white: #fff;
+$darkgray: #3D3D3D;
+$base-gray: #45555F;
+$gray-saturate-85: saturate($base-gray, 85%);
+$otgs-blue: #21759b;
+
+// TRANSITION SPEEDS
+$transition-fast: 0.15s;
+
+// ON OFF SWITCH
+$switch-height: 18px;
+$switch-width: 55px;
+$switch-group-height: $switch-height + 4;
+$toggle-group-height: $switch-height + 5;
+
+.otgs-installer-component-setting {
+	margin: 1em 0;
+	h4 {
+		margin: 0;
+	}
+	.otgs-settings-container & {
+		.spinner {
+			position: absolute;
+			margin:   5px 0 0;
+		}
+	}
+}
+
+.otgs-on-off-switch + .otgs-switch__onoff,
+.otgs-switch__onoff + .otgs-on-off-switch {
+	margin-inline-start: 7px;
+}
+
+/* ON/OFF Switch */
+.otgs-switch__onoff {
+	position:       relative;
+	width:          $switch-width;
+	display:        inline-block;
+	vertical-align: middle;
+	flex:           0 0 $switch-width;
+
+	&.otgs-pull-right {
+		right: 0;
+	}
+
+	.otgs-switch__onoff-label {
+		display:       block;
+		overflow:      hidden;
+		cursor:        pointer;
+		border:        1px solid darken($white, 10%);
+		border-radius: $switch-height - 2;
+		margin:        0;
+	}
+
+	.otgs-switch__onoff-inner {
+		width:       200%;
+		margin-left: -100%;
+		transition:  margin $transition-fast ease-in-out;
+
+		&:before,
+		&:after {
+			float:       left;
+			width:       50%;
+			height:      $switch-group-height;
+			padding:     0;
+			line-height: $switch-group-height;
+			font-size:   11px;
+			box-sizing:  border-box;
+		}
+
+		&:before {
+			content:          "ON";
+			padding-left:     10px;
+			background-color: $otgs-blue;
+			color:            $white;
+		}
+
+		&:after {
+			content:          "OFF";
+			padding-right:    8px;
+			background-color: darken($white, 2%);
+			color:            $darkgray;
+			text-align:       right;
+		}
+	}
+
+	.otgs-switch__onoff-switch {
+		width:         $switch-height;
+		height:        $switch-height;
+		margin:        0;
+		background:    $white;
+		box-shadow:    0 0 3px rgba(0, 0, 0, .3);
+		border-radius: 50%;
+		position:      absolute;
+		top:           3px;
+		bottom:        0;
+		right:         $switch-height + 16;
+		transition:    right $transition-fast ease-in-out;
+	}
+}
+
+.otgs-toggle-group {
+	position:    relative;
+	display:     flex;
+	align-items: center;
+
+	.otgs-switch__onoff-inner {
+		display: block;
+	}
+
+	input[type=checkbox] {
+		display: none;
+
+		&:checked ~ .otgs-switch__onoff .otgs-switch__onoff-label .otgs-switch__onoff-inner {
+			margin-left: 0;
+		}
+
+		&:checked ~ .otgs-switch__onoff .otgs-switch__onoff-label .otgs-switch__onoff-switch {
+			right:      3px;
+			box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+		}
+
+		&:focus ~ .otgs-switch__onoff {
+			outline: thin dotted #333;
+		}
+	}
+
+	.otgs-on-off-switch {
+		cursor:  pointer;
+		display: inline-block;
+	}
+}
+
+.otgs-external-link:after {
+	font-family:    dashicons !important;
+	content:        "\00a0\f504";
+	vertical-align: baseline;
+	line-height:    1;
+	display:        inline-block;
+}

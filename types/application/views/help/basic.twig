@@ -1,0 +1,25 @@
+{#
+    Basic template for the help tab on admin pages.
+
+    It works with following context:
+    - string[] introductory_paragraphs
+    - string your_options: The string "your options for this page are..."
+    - array options: Each option needs to have "name" and "explanation" keys.
+    - string[] ending_paragraphs
+
+    @since 2.0
+#}
+
+{% for paragraph in introductory_paragraphs %}
+    <p>{{ paragraph|raw }}</p>
+{% endfor %}
+<h3>{{ your_options }}</h3>
+<dl>
+    {% for option in options %}
+        <dt>{{ option.name }}</dt>
+        <dd>{{ option.explanation|raw }}</dd>
+    {% endfor %}
+</dl>
+{% for paragraph in ending_paragraphs %}
+    <p>{{ paragraph|raw }}</p>
+{% endfor %}

@@ -1,0 +1,42 @@
+<?php
+/**
+ * Template File
+ * This file is used to create the overlay displayed above the Template editor on the Content Template edit page, when
+ * the Gutenberg Editor is selected.
+ *
+ * @since 2.5.0
+ */
+
+$ct_id = (int) toolset_getget( 'ct_id', 0 );
+$medium_allowed_frontend_templates = $this->medium->get_frontend_templates();
+?>
+
+<div id="anchor-usage-section" class="toolset-user-editors-gutenberg-backend js-toolset-user-editors-gutenberg-backend">
+    <h3><?php echo sprintf( __( '%1$s', 'wpv-views' ), $this->editor->get_name() ); ?></h3>
+    <?php
+    if ( count( $medium_allowed_frontend_templates ) == 1 ) {
+        $template = array_pop( $medium_allowed_frontend_templates );
+	?>
+    <p>
+		<?php
+		echo sprintf(
+			__( 'This Content Template is used in %1$s, and was created using Gutenberg Editor.', 'wpv-views' ),
+			'<strong>' . $template['form-option-label'] . '</strong>'
+		);
+		?>
+    </p>
+	<?php
+    } else {
+    ?>
+    <p>
+		<?php _e( 'You created this template using Gutenberg Editor.', 'wpv-views' ); ?>
+    </p>
+    <?php
+    }
+    ?>
+    <div>
+        <a href="<?php echo admin_url( 'post.php?post=' . $ct_id . '&action=edit' ); ?>" class="button button-primary button-large">
+            <?php _e( 'Edit with Gutenberg Editor', 'wpv-views' ); ?>
+        </a>
+    </div>
+</div>

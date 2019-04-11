@@ -1,0 +1,156 @@
+{#
+    Various macros for easier rendering of input forms.
+
+    Usage:
+        {% import "@toolset/forms.twig" as forms %}
+        {{
+            forms.twoColumnRow(
+                forms.label(__( 'Name plural', 'wpcf' ), true),
+                forms.textInput('value: displayName')
+            )
+        }}
+
+    @since m2m
+#}
+
+
+{% macro textInput(dataBinding, class, value, label, isRequired, name, id, placeholder, type) %}
+
+    {% if label is not empty %}
+        {{ _self.label(label, isRequired, name, _self.textInput(name, id, value, class, placeholder, '', isRequired)) }}
+    {% else %}
+        <input type="{{ type|default('text') }}"
+               id="{{ id }}"
+               value="{{ value }}"
+               name="{{ name }}"
+               class="{{ class|default('large-text') }}"
+               placeholder="{{ placeholder }}"
+               data-bind="{{ dataBinding }}"
+        />
+    {% endif %}
+{% endmacro %}
+
+{#
+    Render select field with all options
+
+    Usage:
+        {% import "@toolset/forms.twig" as forms %}
+        {%
+        set optionsArray = {
+            0:{ 'value' : 'relationship1', 'selected' : true, 'title' : 'Relationship 1' },
+            1:{ 'value' : 'relationship2', 'title' : 'Relationship 2'},
+            2:{ 'value' : 'relationship3', 'title' : 'Relationship 3', 'disabled' : true}
+        }
+        %}
+        {{
+            forms.twoColumnRow(
+                forms.label(__( 'Select', 'wpcf' ), true),
+                forms.selectInput('value: displayName', 'myclass', optionsArray, true, 'selector_name', '')
+            )
+        }}
+
+
+    @since m2m
+#}
+
+{% macro selectInput(dataBinding, class, options, IsRequired, name, id ) %}
+    {% set requiredInput = ( IsRequired ? 'required' : '' ) %}
+
+    <select class="{{ class }}" name="{{ name }}" data-bind="{{ dataBinding }}" id="{{ id }}" {{ requiredInput }}>
+        {% for optionKey, optionValue in options %}
+            {% set setSelected = ( optionValue.selected ? 'selected' : '' ) %}
+            {% set setDisabled = ( optionValue.disabled ? 'disabled' : '' ) %}
+            <option value="{{ optionValue.value }}" {{ setSelected }} {{ setDisabled }}>{{ optionValue.title }}</option>
+        {% endfor %}
+    </select>
+{% endmacro %}
+
+
+{% macro radio( dataBinding, value, label, name, class )%}
+    <label>
+        <input type="radio"
+               name="{{ name }}"
+               class="{{ class }}"
+               value="{{ value }}"
+               data-bind="{{ dataBinding }}"
+        />
+
+        {{ label }}
+    </label>
+{% endmacro %}
+
+
+{% macro checkbox(dataBinding, value, label, name, class) %}
+    <label>
+        <input type="checkbox"
+               name="{{ name }}"
+               class="{{ class }}"
+               value="{{ value }}"
+               data-bind="{{ dataBinding }}"
+        />
+
+        {{ label }}
+    </label>
+{% endmacro %}
+
+
+{% macro label(labelCaption, isRequired, for, content) %}
+    <label for="{{ for }}">
+        {{ labelCaption }}
+
+        {% if isRequired %}
+            (<strong>{{ __( 'required', 'wpcf' ) }}</strong>)
+        {% endif %}
+
+        {{ content|raw }}
+    </label>
+{% endmacro %}
+
+{#
+    If it's necessary to control row visiblity you can set visibilityBinding
+
+    example:
+    {{
+    forms.twoColumnRow(
+        forms.label(__( 'Label', 'toolset' ), true),
+        forms.textInput('value: example', '', '', '', example, 'example', 'example', ''),
+        "exampleRowVisiblity"
+    )
+    }}
+
+    to control visibility use something like this:
+
+    self.exampleRowVisiblity = ko.observable( false ); // hide row
+    or
+    self.exampleRowVisiblity = ko.observable( true ); // show row
+#}
+{% macro twoColumnRow(labelColumn, fieldColumn, visibilityBinding) %}
+    <tr {% if visibilityBinding != null %} data-bind="visible: {{ visibilityBinding }}" {% endif %}>
+        <td>
+            {{ labelColumn }}
+        </td>
+        <td>
+            {{ fieldColumn }}
+        </td>
+    </tr>
+{% endmacro %}
+
+
+{% macro button(dataBinding, label, type = 'secondary', isLarge = false) %}
+    {% set typeToClass = {
+        secondary: 'button-seconday',
+        primary: 'button-primary',
+        red: 'button-primary toolset-red-button'
+    } %}
+
+    {% set largeClass = ( isLarge ? 'button-large' : '' ) %}
+
+    <button class="button {{ typeToClass[type] }} {{ largeClass }}"
+            data-bind="{{ dataBinding }}"
+    >{{ label }}</button>
+{% endmacro %}
+
+
+{% macro spinner(visibilityCondition) %}
+    <span class="spinner" data-bind="style: { visibility: ({{ visibilityCondition }} ? 'visible' : 'hidden') }"></span>
+{% endmacro %}

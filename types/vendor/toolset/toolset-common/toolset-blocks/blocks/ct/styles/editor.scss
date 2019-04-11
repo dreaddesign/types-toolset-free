@@ -1,0 +1,42 @@
+/**
+* Toolset Content Template block editor style.
+*
+* This file contains all the needed styles to be used inside Gutenberg editor when the Toolset Content Template block is used.
+*/
+
+.wp-block-toolset-ct {
+  .wp-block-toolset-ct-placeholder {
+    span {
+      display: inline-block;
+      line-height: initial;
+    }
+
+    p {
+      margin: 0.5em 0;
+    }
+  }
+}
+
+.wp-block-toolset-ct-preview {
+  .wpv-ct-info-warning {
+    padding: 10px;
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border: 1px solid #faebcc;
+    border-radius: 3px;
+    text-align: center;
+    overflow: hidden;
+  }
+}
+
+.toolset-gutenberg-block-image.toolset-ct-gutenberg-block::before {
+  font-family: 'onthegosystems-icons', sans-serif !important;
+  content: "\f11e";
+  font-size: 20px;
+}
+
+.toolset-gutenberg-block-placeholder.toolset-ct-gutenberg-block::before {
+  font-family: 'onthegosystems-icons', sans-serif !important;
+  content: "\f11e";
+  font-size: 64px;
+}

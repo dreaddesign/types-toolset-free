@@ -1,0 +1,59 @@
+{#
+    Change field type dialog.
+
+    @since 2.0
+#}
+
+    {#
+        Section for changing field type
+    #}
+    {{ strings.aboutFieldTypeChanging }}
+    <p><strong>{{ strings.potentiallyRiskyOperation }}</strong></p>
+    <div class="wpcf-choose-field">
+        {% for fieldType in fieldTypeDefinitions %}
+            <button type="button" class="types-choose-field-type-button wpcf-choose-field-button wpcf-form-button form-button button"
+                    data-bind="
+                        enable: canConvertTo('{{ fieldType.slug|e }}'),
+                        highlightedBorder: isSelected('{{ fieldType.slug|e }}'),
+                        click: function() { selectedType('{{ fieldType.slug|e }}'); }"
+            >
+                <i class="{{ fieldType.iconClasses|e }}"></i>
+                {{ fieldType.displayName }}
+            </button>
+        {% endfor %}
+    </div>
+    <p>{{ strings.someTypesAreDisabled }}</p>
+
+    <hr />
+
+    {#
+        Section for changing field cardinality
+    #}
+    <div>
+        <div style="float: left; width: 40%;">
+            <p><strong>{{ strings.singleOrRepeatingField }}</strong></p>
+            <div style="margin: 10px">
+                <label>
+                    <input type="radio" value="single" name="types-field-cardinality" data-bind="checked: targetCardinality" />
+                    {{ strings.singleField }}
+                </label>
+            </div>
+            <div style="margin: 10px">
+                <label>
+                    <input type="radio" value="repetitive" name="types-field-cardinality" data-bind="checked: targetCardinality, enable: targetTypeCanBeRepetitive" />
+                    {{ strings.repetitiveField }}
+                    <span data-bind="visible: (! targetTypeCanBeRepetitive()) ">&nbsp; <small><em>{{ strings.targetSupportsSingleOnly }}</em></small></span>
+                </label>
+            </div>
+        </div>
+
+        {# Warning to be displayed only if changing from repeating to single field. #}
+        <div style="float: left; width: 60%;" data-bind="visible: reducingCardinality">
+            <div style="float: left; width: 92px">
+                <i class="fa fa-exclamation-triangle fa-4x" style="margin: 20px;"></i>
+            </div>
+            <div style="float: left; width: 345px;">
+                <p style="font-size: 11px;">{{ strings.repetitiveToSingleWarning|raw }}</p>
+            </div>
+        </div>
+    </div>

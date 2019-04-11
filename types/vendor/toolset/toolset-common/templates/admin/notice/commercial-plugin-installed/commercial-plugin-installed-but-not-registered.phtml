@@ -1,0 +1,19 @@
+<?php
+/**
+ * Template File
+ * This file is only build for classes which implements Toolset_Admin_Notice_Interface
+ *
+ * @var Toolset_Admin_Notice_Interface $this
+ *
+ * @since 2.4.3
+ */
+?>
+	<p>
+		<?php
+		echo sprintf(
+			__( 'Remember to %1$sregister Toolset%2$s. Registration gives you automatic updates for stability, performance and security.', 'wpv-views' ),
+			'<a href="' . admin_url( 'plugin-install.php?tab=commercial' ) . '">',
+			'</a>'
+		);
+        ?>
+	</p>

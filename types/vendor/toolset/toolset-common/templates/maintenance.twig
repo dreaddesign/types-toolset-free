@@ -1,0 +1,31 @@
+<?php
+
+{#
+    Template for a .maintenance PHP file that is being used by \OTGS\Toolset\Common\MaintenanceMode\Controller.
+
+    Note: This file MUST NOT produce any output, it would produce a "Cannot modify header information - headers
+    already sent" warning.
+
+    @since 2.6.8
+#}
+
+$toolset_maintenance_exception = false;
+
+{% if allow_backend %}
+    if (
+        ( is_admin() && ! wp_doing_ajax() )
+        || stristr( $_SERVER['REQUEST_URI'], '/wp-login.php' )
+    ) {
+        $toolset_maintenance_exception = true;
+    }
+{% endif %}
+
+{% if allow_ajax %}
+    if( is_admin() && wp_doing_ajax() ) {
+        $toolset_maintenance_exception = true;
+    }
+{% endif %}
+
+if( ! $toolset_maintenance_exception ) {
+    $upgrading = {{ upgrading_time|raw }};
+}

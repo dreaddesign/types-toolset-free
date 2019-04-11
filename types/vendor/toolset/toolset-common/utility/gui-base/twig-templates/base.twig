@@ -1,0 +1,17 @@
+{#
+    Base template for Toolset admin pages.
+
+    @since 2.2
+#}
+
+<div class="wrap">
+    {% block heading %}
+        <h1>{% block title %}{% endblock %}</h1>
+    {% endblock %}
+
+    <div id="toolset-page-content">{% block content %}{% endblock %}</div>
+
+    {% block footer %}
+        <script id="toolset_model_data" type="text/plain">{{ js_model_data }}</script>
+    {% endblock %}
+</div>

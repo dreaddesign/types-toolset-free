@@ -1,0 +1,214 @@
+/**
+* Toolset View block editor style.
+*
+* This file contains all the needed styles to be used inside Gutenberg editor when the Toolset View block is used.
+*/
+
+.wp-block-toolset-view {
+  .wp-block-toolset-view-placeholder {
+    span {
+      display: inline-block;
+      line-height: initial;
+    }
+
+    p {
+      margin: 0.5em 0;
+    }
+  }
+}
+
+.wp-block-toolset-view-preview {
+  .wpv-view-info-warning {
+    padding: 10px;
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border: 1px solid #faebcc;
+    border-radius: 3px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  div {
+    margin: 0 0 5px 0;
+  }
+
+  div.more {
+    div {
+      border: 1px dashed $light-gray-500;
+    }
+  }
+
+  .wpv-view-block-preview {
+    height: 30px !important;
+    line-height: 30px !important;
+    overflow: hidden;
+    background-color: $white !important;
+    color: $black !important;
+    border: 1px solid $light-gray-500;
+
+    &.wpv-long-preview {
+      height: 100% !important;
+    }
+  }
+
+  .view-information span {
+    vertical-align: middle;
+    display: table-cell;
+  }
+
+  div.loading {
+    border: none;
+
+    span {
+      background: url('../img/loader.gif') no-repeat;
+      background-size: contain;
+      display: inline-block;
+      vertical-align: middle;
+      width: 20px;
+      height: 25px;
+      margin: 0 5px 0 0;
+    }
+
+    div {
+      margin: 0;
+      background-color: $light-gray-100 !important;
+    }
+
+    .wpv-view-block-preview {
+      border: none;
+    }
+  }
+
+  .view-information {
+    .view-purpose::before {
+      font-family: 'dashicons', sans-serif;
+      font-size: 25px;
+      content: "\f164";
+    }
+
+    .view-style::before {
+      font-family: 'dashicons', sans-serif;
+      font-size: 25px;
+      content: "\f163";
+    }
+
+    .view-purpose,
+    .view-style {
+      display: table;
+    }
+
+    .view-title {
+      span {
+        display: block;
+      }
+
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+
+  .block-preview-list {
+    overflow: hidden;
+
+    .row-fluid [class*="span-preset"] {
+      display: block;
+      float: left;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      margin-left: 2.12766%;
+      width: 100%;
+      height: 70px;
+      border-radius: 3px;
+      background-color: #0074a2;
+      color: #fff;
+      text-align: center;
+      line-height: 70px;
+    }
+
+    .row-fluid [class*="span-preset"]:first-child {
+      margin-left: 0;
+    }
+
+    .row-fluid .controls-row [class*="span-preset"] + [class*="span-preset"] {
+      margin-left: 2.12766%;
+    }
+
+    .row-fluid .span-preset12 {
+      width: 100%;
+    }
+
+    .row-fluid .span-preset11 {
+      width: 91.4894%;
+    }
+
+    .row-fluid .span-preset10 {
+      width: 82.9787%;
+    }
+
+    .row-fluid .span-preset9 {
+      width: 74.4681%;
+    }
+
+    .row-fluid .span-preset8 {
+      width: 65.9574%;
+    }
+
+    .row-fluid .span-preset7 {
+      width: 57.4468%;
+    }
+
+    .row-fluid .span-preset6 {
+      width: 48.9362%;
+    }
+
+    .row-fluid .span-preset5 {
+      width: 40.4255%;
+    }
+
+    .row-fluid .span-preset4 {
+      width: 31.9149%;
+    }
+
+    .row-fluid .span-preset3 {
+      width: 23.4043%;
+    }
+
+    .row-fluid .span-preset2 {
+      width: 14.8936%;
+    }
+
+    .row-fluid .span-preset1 {
+      width: 6.38298%;
+    }
+  }
+}
+
+.toolset-gutenberg-block-image.toolset-view-gutenberg-block::before {
+  font-family: 'onthegosystems-icons', sans-serif !important;
+  content: "\f11e";
+  font-size: 20px;
+}
+
+.toolset-gutenberg-block-placeholder.toolset-view-gutenberg-block::before {
+  font-family: 'onthegosystems-icons', sans-serif !important;
+  content: "\f11e";
+  font-size: 64px;
+}
+
+.wp-block-toolset-view-inspector {
+  .results-notice {
+    ol {
+      margin-left: 2em;
+    }
+
+    li {
+      list-style-position: inside;
+    }
+  }
+
+  .components-panel__row label {
+    max-width: 100%;
+  }
+}

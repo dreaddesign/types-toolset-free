@@ -1,0 +1,33 @@
+<?php
+/**
+ * Template File
+ * This file is only build for classes which implements Toolset_Admin_Notice_Interface
+ *
+ * @var Toolset_Admin_Notice_Interface $this
+ *
+ * @since 2.3.0 First release
+ */
+
+$theme = wp_get_theme();
+$theme_name = $theme->get( 'Name' );
+$theme_name = ! empty( $theme_name )
+	? $theme->get( 'Name' )
+	: __( 'This theme', 'wpv-views' );
+?>
+	<h3>
+		<?php printf(
+			__( '%s works best with Toolset plugins', 'wpv-views' ),
+			esc_attr( $theme_name ) );
+		?>
+	</h3>
+
+	<p>
+		<?php _e( 'To get the most out of this theme, you should use Toolset plugins.', 'wpv-views' ); ?>
+	</p>
+
+<?php
+echo Toolset_Admin_Notices_Manager::tpl_button_primary(
+    __( 'Toolset Website', 'wpv-views' ),
+	Types_Helper_Url::get_url( 'wp-types', 'theme-works-best-with-toolset' ),
+	true
+);

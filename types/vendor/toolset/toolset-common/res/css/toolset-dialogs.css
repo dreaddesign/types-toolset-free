@@ -1,0 +1,431 @@
+/**
+ * CSS with rules that will prevent other plugins to make changes on our dialogs
+ */
+
+.toolset-ui-dialog.ui-dialog {
+    z-index: 100102 !important;
+    border-radius: 0px !important;
+}
+.toolset-ui-dialog.ui-widget-content {
+    border-top: 1px solid #dddddd !important;
+    border-bottom: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border: 1px solid #dddddd;
+    background: #ffffff !important;
+    color: #333333 !important;
+}
+.toolset-ui-dialog .ui-dialog-titlebar {
+    background: #fcfcfc !important;
+    border-bottom: 1px solid #ddd !important;
+    height: 36px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 36px !important;
+    padding: 0 36px 0 16px !important;
+}
+.toolset-ui-dialog .ui-dialog-title {
+	float: none !important;
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.toolset-ui-dialog .ui-widget{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", "Open Sans", sans-serif;
+    font-size: 13px !important;
+    line-height: 1.4em !important;
+}
+.toolset-ui-dialog.ui-widget{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", "Open Sans", sans-serif;
+    line-height: 1.4em !important;
+    font-size: 13px !important;
+    color: #444 !important;
+}
+/*
+* .toolset-ui-dialog.ui-widget .ui-dialog-content
+*
+* A necessary CSS override for content color, which is reset by Cherry Framework Version 4 (theme), when active.
+* Following CSS rule reinforces the standard content color for Toolset Dialogues.
+*/
+.toolset-ui-dialog.ui-widget .ui-dialog-content {
+    color: #444 !important;
+}
+.toolset-ui-dialog .ui-widget-header{
+    border: 1px solid #dddddd !important;
+    border-top: 0px !important;
+    background: #fcfcfc !important;
+    color: #444 !important;
+    font-weight: bold !important;
+    border-radius: 0px !important;
+}
+.toolset-ui-dialog .ui-widget-header.ui-tabs-nav{
+    border: 0px !important;
+}
+.toolset-ui-dialog .ui-tabs-nav .ui-state-active.ui-state-default{
+    background: #ededed !important;
+}
+.toolset-ui-dialog .ui-tabs-nav .ui-state-default{
+    background: #fcfcfc !important;
+    font-weight: normal !important;
+}
+.toolset-ui-dialog .ui-tabs-panel.ui-widget-content{
+    border-left: 1px solid #ccc !important;
+}
+.toolset-ui-dialog .ui-dialog-buttonpane {
+    padding: 8px;
+}
+.toolset-ui-dialog.ui-widget input, .toolset-ui-dialog.ui-widget select, .toolset-ui-dialog.ui-widget textarea, .ui-widget button{
+    font-size: 13px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", "Open Sans", sans-serif;
+}
+.ui-widget-overlay {
+    background: #000 !important;
+    opacity: .7 !important;
+    filter: alpha(opacity=70) !important;
+    z-index: 100101;
+}
+.toolset-ui-dialog .ui-dialog-titlebar-close {
+    background: 0 0 !important;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    color: #666 !important;
+    cursor: pointer !important;
+    display: block !important;
+    padding: 0 !important;
+	margin: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 36px !important;
+    height: 36px !important;
+    text-align: center !important;
+}
+.toolset-ui-dialog .ui-dialog-titlebar-close:hover {
+    color: #00a0d2 !important;
+}
+.toolset-ui-dialog .ui-icon {
+    width: 0px !important;
+    height: 0px !important;
+}
+.toolset-ui-dialog .ui-widget-content{
+    border:0px !important;
+}
+.toolset-ui-dialog .ui-dialog-buttonpane{
+    border-top: 1px solid #ddd !important;
+}
+.toolset-ui-dialog .button-primary {
+	padding: 0 10px 1px !important;
+    background: #0085ba !important;
+    border-color: #0073aa #006799 #006799 !important;
+    -webkit-box-shadow: 0 1px 0 #006799 !important;
+    box-shadow: 0 1px 0 #006799 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    text-shadow: 0 -1px 1px #006799,1px 0 1px #006799,0 1px 1px #006799,-1px 0 1px #006799 !important;
+    font-weight: normal !important;
+	line-height: 26px !important;
+	letter-spacing: normal;
+    border-radius: 3px !important;
+}
+.toolset-ui-dialog .button-primary:hover {
+	padding: 0 10px 1px !important;
+    border-color: #069dd4 !important;
+	line-height: 26px !important;
+	letter-spacing: normal;
+}
+.toolset-ui-dialog .button-secondary {
+	padding: 0 10px 1px !important;
+    color: #555 !important;
+    border-color: #ccc !important;
+    background: #f7f7f7 !important;
+    -webkit-box-shadow: 0 1px 0 #ccc !important;
+    box-shadow: 0 1px 0 #ccc !important;
+    vertical-align: top !important;
+    font-weight: normal !important;
+	line-height: 26px !important;
+	letter-spacing: normal;
+    border-radius: 3px !important;
+}
+.toolset-ui-dialog .button-secondary:hover {
+	padding: 0 10px 1px !important;
+    border-color: #999 !important;
+	line-height: 26px !important;
+	letter-spacing: normal;
+}
+.toolset-ui-dialog .button-secondary[disabled],
+.toolset-ui-dialog .button-secondary:disabled,
+.toolset-ui-dialog .button-secondary.disabled {
+	padding: 0 10px 1px !important;
+    border-color: #ddd !important;
+	line-height: 26px !important;
+	letter-spacing: normal;
+}
+.toolset-ui-dialog .button-small,
+.toolset-ui-dialog .button-small:hover {
+	height: 24px;
+	padding: 0 8px 1px;
+	line-height: 22px !important;
+	font-size: 11px !important;
+	letter-spacing: normal;
+}
+.toolset-ui-dialog .toolset-option-helper-text {
+	display: block;
+	color: #999;
+	font-size: 0.9em;
+}
+.toolset-ui-dialog .toolset-option-label-disabled {
+	color: #999;
+}
+/**
+ * Shortcodes dialogs styles: listing dialog.
+ */
+.toolset-shortcode-gui-group-list .item {
+    margin: 0 5px 5px 0;
+    white-space: nowrap;
+    display: inline-block;
+    cursor: pointer;
+}
+/**
+ * Shortcodes dialogs styles: shortcodes dialog.
+ */
+.toolset-shortcode-gui-dialog-container .ui-tabs-nav {
+    padding: .2em .1em .2em .2em;
+    border: none;
+	background: none;
+    box-shadow: none;
+    width: 30%;
+	max-width: 250px;
+    display: block;
+	float: left;
+}
+
+.toolset-shortcode-gui-dialog-container .ui-tabs-vertical .ui-tabs-nav li {
+	clear: left;
+	width: 100%;
+	border: none;
+	margin: 0 -1px .2em 0;
+	-webkit-transition: all 0.05s linear;
+	-moz-transition: all 0.05s linear;
+	-o-transition: all 0.05s linear;
+	-ms-transition: all 0.05s linear;
+	transition: all 0.05s linear;
+}
+
+.toolset-shortcode-gui-dialog-container .ui-tabs-vertical .ui-tabs-nav li a {
+	display:block;
+}
+
+.toolset-shortcode-gui-dialog-container .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
+	padding-bottom: 0;
+	padding-right: .1em;
+	border: none;
+	background: #ededed;
+}
+
+.toolset-shortcode-gui-dialog-container .ui-tabs-vertical .ui-tabs-nav li.toolset-shortcode-gui-tabs-incomplete {
+	background: #b94a48 !important;
+}
+
+.toolset-shortcode-gui-dialog-container .ui-tabs-vertical .ui-tabs-panel {
+    display: block;
+	float: left;
+	width: 60%;
+    padding-left: 5%;
+	border-left: 1px solid #ccc;
+}
+
+.toolset-shortcode-gui-dialog-container .ui-tabs-vertical label {
+    display: block;
+}
+.toolset-shortcode-gui-dialog-container .ui-tabs-vertical .ui-tabs-nav .ui-tabs-active a {
+    color: #333;
+    font-weight: 700;
+}
+.toolset-shortcode-gui-dialog-container .ui-tabs-vertical .ui-tabs-nav .toolset-shortcode-gui-tabs-incomplete a {
+	color: #f9f9f9;
+}
+.toolset-shortcode-gui-dialog-container .ui-tabs-vertical .ui-tabs-nav a {
+    display: block;
+    padding: 4px 20px;
+    line-height: 18px;
+    font-size: 14px;
+    text-shadow: none;
+    text-decoration: none;
+	color: grey;
+}
+.toolset-shortcode-gui-dialog-container .ui-tabs-vertical  [class*=" icon-"] {
+    padding-left: 2em;
+}
+.toolset-shortcode-gui-dialog-container .toolset-shortcode-gui-attribute-wrapper,
+.toolset-shortcode-gui-dialog-container .toolset-shortcode-gui-content-wrapper {
+	position: relative;
+    /*padding-bottom: 1em;*/
+}
+.toolset-shortcode-gui-dialog-container h2 {
+    margin-top: 5px;
+}
+.toolset-shortcode-gui-dialog-container .toolset-shortcode-gui-dialog-item-group {
+	overflow: hidden;
+	clear: left;
+	margin: 0;
+	padding: 0;
+}
+	.toolset-shortcode-gui-dialog-container .toolset-shortcode-gui-dialog-item-group > li {
+		display: block;
+		float: left;
+		margin: 0;
+		padding: 0;
+	}
+	.toolset-shortcode-gui-dialog-container .toolset-shortcode-gui-attribute-group .toolset-shortcode-gui-attribute-wrapper {
+		margin: 0;
+		padding: 0 10px 0 0;
+	}
+		.toolset-shortcode-gui-dialog-container .toolset-shortcode-gui-dialog-item-group > li:last-child .toolset-shortcode-gui-attribute-wrapper {
+			padding-right: 0;
+		}
+.toolset-shortcode-gui-dialog-container .toolset-shortcode-gui-attribute-wrapper h3,
+.toolset-shortcode-gui-dialog-container .toolset-shortcode-gui-attribute-group h3,
+.toolset-shortcode-gui-dialog-container .toolset-shortcode-gui-content-wrapper h3 {
+	color: #333;
+	background: #ededed;
+	padding: 1px 5px;
+	font-size: 13px;
+}
+.toolset-shortcode-gui-dialog-container .toolset-shortcode-gui-attribute-wrapper label {
+    display: block;
+}
+.toolset-shortcode-gui-dialog-container .toolset-shortcode-gui-attribute-wrapper span.toolset-shortcode-gui-attribute-pseudolabel,
+.toolset-shortcode-gui-dialog-container .toolset-shortcode-gui-attribute-group span.toolset-shortcode-gui-attribute-pseudolabel {
+	display: block;
+	margin: 3px 5px;
+}
+.toolset-shortcode-gui-dialog-container .toolset-shortcode-gui-invalid-attr {
+	border-color: #B94A48;
+	background-color: #F2DEDE;
+	color: #B94A48;
+}
+.toolset-shortcode-gui-dialog-container + .ui-dialog-buttonpane .ui-dialog-buttonset {
+	float: none;
+	overflow: hidden;
+	padding: 2px 0;
+}
+
+.toolset-shortcode-gui-dialog-container + .ui-dialog-buttonpane button {
+	float: left;
+	margin-left: 0;
+	margin-right: 10px;
+}
+
+.toolset-shortcode-gui-dialog-container + .ui-dialog-buttonpane .toolset-shortcode-gui-dialog-button-align-right {
+	float: right;
+	margin-left: 10px;
+	margin-right: 0
+}
+.toolset-shortcode-gui-dialog-container .toolset-advanced-setting {
+    background: #f6f6f6 none repeat scroll 0 0;
+    border-left: 3px solid #cdcdcd;
+    padding: 1px 10px 10px 20px;
+}
+.toolset-shortcode-gui-dialog-container .toolset-mightlong-list {
+    margin: 0;
+}
+.toolset-shortcode-gui-dialog-container .toolset-mightlong-list > li {
+    min-height: 24px;
+    min-width: 45%;
+    float: left;
+    padding-right: 4%;
+    margin: 0 0 6px;
+}
+/**
+ * Shortcodes dialogs styles: shortcodes wizard.
+ */
+.toolset-shortcode-gui-wizard-options-container {
+	display: flex;
+	text-align: center;
+}
+.toolset-shortcode-gui-wizard-option {
+	position: relative;
+	flex: 1;
+	margin: 0 10px 0 0;
+	padding: 10px;
+	background: #fafafa;
+	border: solid 1px #ccc;
+	border-radius: 5px;
+	vertical-align: top;
+}
+.toolset-shortcode-gui-wizard-option:last-child {
+	margin: 0;
+}
+.toolset-shortcode-gui-wizard-option-selected.toolset-shortcode-gui-wizard-option-has-settings::before,
+.toolset-shortcode-gui-wizard-option-selected.toolset-shortcode-gui-wizard-option-has-settings::after{
+    content: '';
+    position: absolute;
+    left: 42%;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #e4e4e4;
+    clear: both;
+}
+.toolset-shortcode-gui-wizard-option-selected.toolset-shortcode-gui-wizard-option-has-settings::before {
+	border-color: #999 transparent transparent transparent;
+    border-width: 21px;
+}
+	.toolset-shortcode-gui-wizard-option input[type="radio"].toolset-shortcode-gui-wizard-option-hidden {
+		display: none;
+	}
+.toolset-shortcode-gui-wizard-option-selected {
+	background: #e4e4e4;
+	border-color: #999;
+}
+.toolset-shortcode-gui-wizard-option-disabled {
+	background: #fff;
+}
+	.toolset-shortcode-gui-wizard-option-disabled * {
+		color: #999;
+	}
+.toolset-shortcode-gui-wizard-option-icon {
+	display: inline-block;
+	width: 100%;
+	padding-bottom: 10px;
+}
+.toolset-shortcode-gui-wizard-option-extra {
+	padding: 0 30px;
+	margin-top: 30px;
+	border-top: solid 1px #ccc;
+}
+/*********************************************
+Toolset Confirmation Dialog
+
+ @since m2m
+
+ *********************************************/
+.toolset-confirmation-dialog {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.toolset-confirmation-dialog-icon {
+    padding: 17px 15px 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+@media (min-width: 768px) {
+    .toolset-confirmation-dialog-icon {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+.toolset-confirmation-dialog-content {
+    padding: 15px;
+    box-sizing: border-box;
+}
+.toolset-confirmation-dialog-content > :first-child {
+    margin-top: 0;
+}

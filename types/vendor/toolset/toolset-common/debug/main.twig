@@ -1,0 +1,90 @@
+{#
+    Toolset Troubleshooting page template.
+
+    Requires the Toolset Gui Base.
+
+    @since m2m
+#}
+
+{% extends "@toolset/base.twig" %}
+
+{% block title %}{{ __( 'Toolset Debug Information' ) }}{% endblock %}
+
+{% import _self as debug %}
+
+{% block content %}
+
+    {# Toolset debug information #}
+    <div class="inside">
+        <p>{{ __( 'This information allows our support team to see the versions of WordPress, plugins and theme on your site. Provide this information if requested in our support forum. No passwords or other confidential information is included.', 'sitepress', 'wpv-views' ) }}</p>
+        <!--suppress HtmlFormInputWithoutLabel -->
+        <textarea style="font-size:10px;width:100%;height:250px;" rows="26" readonly="readonly">{{ debugInformation|raw }}</textarea>
+    </div>
+
+    {# Troubleshooting section #}
+
+    <h2>{{ __( 'Troubleshooting' ) }}</h2>
+
+    <div class="toolset-page-spinner">
+        <img src="{{ assets.loaderOverlay }}" />
+    </div>
+
+    {# Individual troubleshooting operations will each get a (pseudo)metabox. #}
+    <div id="poststuff" class="toolset-actual-content-wrapper" style="display: none;">
+        <div id="post-body" class="metabox-holder columns-1">
+            <div class="postbox-container">
+
+                <div class="postbox" data-bind="foreach: sections">
+
+                    <h2 class="hndle ui-sortable-handle">
+                        <span data-bind="text: title"></span>
+                    </h2>
+
+                    <div class="inside">
+
+                        <p data-bind="text:description"></p>
+
+                        <p data-bind="visible: isDangerous">
+                            <label>
+                                <input type="checkbox" data-bind="checked: userConfirmed, disable: isInProgress() || isCompleted()"/>
+                                {{ __( "I have created a database backup and I know what I am doing.") }}
+                            </label>
+                        </p>
+
+                        <span class="spinner" data-bind="style: { visibility: (isInProgress() ? 'visible' : 'hidden') }"></span>
+
+                        <button data-bind="
+                                    text: buttonLabel,
+                                    enable: canProceed,
+                                    attr: { class: buttonClass() },
+                                    click: onClick"
+                        ></button>
+
+                        <p data-bind="visible: isInProgress">
+                            <strong>
+                                {{ __( 'Please do not navigate away from this page until the process ends.' ) }}
+                            </strong>
+                        </p>
+                        <p data-bind="visible: isCompleted">
+                            <strong>
+                                {{ __( 'The action is now completed.' ) }}
+                            </strong>
+                        </p>
+
+                        <div data-bind="visible: ! isOutputEmpty() || isInProgress()">
+                            <p style="font-size: small; font-family: monospace;">
+                                <label>
+                                    {{ __( 'Progress:' ) }} <br />
+                                    <textarea data-bind="valueScroll: output" rows="10" readonly="readonly"
+                                              style="width: 100%; font-size: small; font-family: monospace;"></textarea>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

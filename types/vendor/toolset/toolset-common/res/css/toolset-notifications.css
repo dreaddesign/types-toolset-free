@@ -1,0 +1,467 @@
+/* Globals */
+.toolset-help,
+.toolset-alert {
+	position: relative;
+	clear: both;
+	margin: 20px 0;
+	border: 1px solid;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+/* Validation messages */
+
+.toolset-alert {
+	padding: 10px 20px 10px 10px;
+	border-color: #fbeed5;
+	background-color: #fcf8e3;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	line-height: 1;
+}
+
+span.toolset-alert {
+	display: inline-block;
+	clear: none;
+	margin: 2px 1px;
+	padding: 4px 6px;
+	cursor: pointer;
+}
+
+.toolset-alert.hidden {
+	display: none;
+}
+
+.toolset-alert,
+.toolset-alert .toolset-alert-header {
+	color: #c09853;
+}
+
+	.toolset-alert .toolset-alert-header {
+		margin: 0;
+	}
+
+	.toolset-alert .toolset-alert-close {
+		position: absolute;
+		top: 9px;
+		right: 5px;
+		color: #999;
+        cursor:pointer;
+	}
+
+	.toolset-alert .button {
+		text-shadow: none;
+	}
+	
+	.toolset-alert .toolset-rounded-icon {
+		width: 25px;
+		height: 25px;
+		margin-right: 10px;
+		line-height: 25px;
+		text-align: center;
+		color: #fff;
+		background: #c09853;
+		border-radius: 50%;
+	}
+
+.toolset-alert-success {
+	border-color: #d6e9c6;
+	background-color: #dff0d8;
+	color: #468847;
+}
+
+	.toolset-alert-success .toolset-alert-header {
+	 	color: #468847;
+	}
+	
+	.toolset-alert-success .toolset-rounded-icon {
+		background: #468847;
+	}
+
+.toolset-alert-error {
+	border-color: #eed3d7;
+	background-color: #f2dede;
+	color: #b94a48;
+}
+
+	.toolset-alert-error .toolset-alert-header {
+	 	color: #b94a48;
+	}
+	
+	.toolset-alert-error .toolset-rounded-icon {
+		background: #b94a48;
+	}
+
+.toolset-alert-info {
+	border-color: #bce8f1;
+	background-color: #d9edf7;
+	color: #3a87ad;
+}
+
+	.toolset-alert-info .toolset-alert-header {
+		color: #3a87ad;
+	}
+	
+	.toolset-alert-info .toolset-rounded-icon {
+		background: #3a87ad;
+	}
+
+/* Explanation messages */
+.toolset-help {
+	background: #fff;
+	border: solid 1px #cdcdcd;
+	border-radius: 0;
+}
+	.toolset-help .icon-remove-sign,
+	.toolset-help .icon-remove {
+		position: absolute;
+		top: -1px;
+		right: -1px;
+		color: #999;
+		opacity: 1;
+		background: #fff;
+		border: solid 1px #cdcdcd;
+		padding: 2px 4px;
+		font-size: 16px;
+		cursor: pointer;
+	}
+
+	.rtl .toolset-help .icon-remove-sign,
+	.rtl .toolset-help .icon-remove {
+		right: auto;
+		left: -1px;
+	}
+
+	.toolset-help .icon-remove-sign:hover,
+	.toolset-help .icon-remove:hover {
+		background: #b94a48;
+		color: #fff;
+	}
+
+	.toolset-help code {
+		display: inline-block;
+	}
+
+.js-show-toolset-message {
+	display: none;
+}
+
+.toolset-help-content {
+	padding: 9px 25px;
+	color: #4f4f4f;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-margin-start: 25%;
+	-moz-margin-start: 25%;
+	margin-inline-start: 25%;
+
+	}
+	@media (max-width: 480px) {
+		.toolset-help-content {
+			-webkit-margin-start: 70px;
+			-moz-margin-start: 70px;
+			margin-inline-start: 70px;
+		}
+	}
+	@media (min-width: 960px) {
+		.toolset-help-content {
+			-webkit-margin-start: 160px;
+			-moz-margin-start: 160px;
+			margin-inline-start: 160px;
+		}
+	}
+	
+	.toolset-help-content a {
+		text-decoration: underline;
+	}
+
+	.toolset-help-content a.button {
+		display: inline-block;
+		line-height: 18px;
+	}
+
+	.toolset-help-content ul,
+	.toolset-help-content ol {
+		line-height: 1.6;
+		margin-left: 0;
+		list-style-position: inside;
+	}
+
+	.toolset-help-content ul li {
+		list-style-type: disc;
+	}
+
+	.toolset-help-content ol li {
+		list-style-type: decimal;
+	}
+
+	.toolset-help-content .btn {
+		margin: 0 10px 0 0;
+		padding: 4px 10px;
+		border: 0;
+		border-radius: 4px;
+		background: #11a99b;
+		color: #fff;
+		text-decoration: none;
+		text-shadow: none;
+		font-weight: bold;
+	}
+
+	.toolset-help-content .btn:hover {
+		background: #008C7D;
+	}
+
+	.toolset-help-content .toolset-help-content-toolbar {
+		margin: 20px 0 10px 0;
+	}
+
+.toolset-help-sidebar {
+	position: absolute;
+	top: -1px;
+	bottom: -1px;
+	left: -1px;
+	width: 25%;
+	background: #333;
+}
+	@media (max-width: 480px) {
+		.toolset-help-sidebar {
+			width: 70px;
+		}
+	}
+	@media (min-width: 960px) {
+		.toolset-help-sidebar {
+			width: 160px;
+		}
+	}
+	.rtl .toolset-help-sidebar {
+		left: auto;
+		right: -1px;
+	}
+	.toolset-help-sidebar::before {
+		content: '';
+		position: absolute;
+		top: 3%;
+		right: 15%;
+		bottom: 2%;
+		left: 6%;
+		background: url('../images/icon-help-message.svg') center no-repeat;
+		background-size: contain;
+	}
+	.rtl .toolset-help-sidebar::before {
+		right: 6%;
+		left: 15%;
+	}
+
+.toolset-help-footer {
+	position: relative;
+	z-index: 1;
+	padding: 5px;
+	border-top: 1px solid #cdcdcd;
+	background: #fff;
+	text-align: right;
+}
+
+	.toolset-help-footer [class^="button-"] {
+		margin-left: 5px;
+	}
+
+
+/* TOOLTIP */
+.toolset-tooltip {
+    position: absolute;
+    z-index: 999;
+    display: inline-block;
+    display: none;
+    padding: 3px 6px;
+    max-width: 300px;
+    background: #000;
+    background: rgba(0,0,0,.8);
+    color: #fff;
+	text-align: center;
+}
+
+.toolset-tooltip:after {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    width: 0;
+    height: 0;
+    border-width: 5px 5px 0 5px;
+    border-style: solid;
+    border-color: rgba(0,0,0,.8) transparent transparent transparent;
+    content: '';
+}
+
+/*highlight search */
+.highlighted {
+    font-weight:bold;
+
+}
+
+.highlighted {
+    padding:1px 4px;
+    margin:0 -4px;
+}
+
+/* ---------------- */
+/* TOOLSET POINTERS */
+/* ---------------- */
+
+.wp-toolset-pointer-trigger {
+	cursor: pointer;
+	color: #0073aa;
+	vertical-align: middle;
+}
+
+.wp-toolset-pointer-content {
+	display: none;
+}
+
+.wp-toolset-pointer .wp-pointer-content {
+	border: 1px solid #EF6223;
+	background: #e9e9e9;
+	box-shadow: 0 0 5px #666;
+}
+
+.wp-toolset-pointer .wp-pointer-content h3 {
+	margin: 0 0 5px;
+	background: #ed8027;
+	border: none;
+	border-bottom: 1px solid #EF6223;
+}
+
+.wp-toolset-pointer .wp-pointer-content h3:before {
+	color: #ed8027;
+	content: "\f11a";
+	font-family: "onthegosystems-icons";
+	font: 28px/1.1;
+	border-radius: 5px;
+}
+
+.wp-toolset-pointer.wp-toolset-types-pointer .wp-pointer-content h3:before {
+	content: "\f11c";
+}
+
+.wp-toolset-pointer.wp-toolset-views-pointer .wp-pointer-content h3:before {
+	content: "\f11e";
+}
+
+.wp-toolset-pointer.wp-toolset-cred-pointer .wp-pointer-content h3:before {
+	content: "\f115";
+}
+
+.wp-toolset-pointer.wp-toolset-access-pointer .wp-pointer-content h3:before {
+	content: "\f111";
+}
+
+.wp-toolset-pointer.wp-toolset-layouts-pointer .wp-pointer-content h3:before {
+	content: "\f117";
+}
+
+.wp-toolset-pointer.wp-toolset-module-pointer .wp-pointer-content h3:before {
+	content: "\f119";
+}
+
+.wp-toolset-pointer.wp-toolset-bootstrap-pointer .wp-pointer-content h3:before {
+	content: "\f113";
+}
+
+.wp-toolset-pointer.wp-toolset-wpml-pointer .wp-pointer-content h3:before {
+	content: "\f11f";
+}
+
+.wp-toolset-pointer .wp-pointer-buttons {
+
+}
+
+.wp-toolset-pointer .wp-pointer-buttons button.alignright {
+	margin: 0 0 0 10px;
+}
+
+.wp-toolset-pointer .wp-pointer-buttons button.alignleft {
+	margin: 0 10px 0 0;
+}
+
+.wp-toolset-pointer.wp-pointer-top .wp-pointer-arrow-inner {
+	top: 2px;
+	border-color: transparent transparent #ed8027;
+}
+
+.wp-toolset-pointer.wp-pointer-top .wp-pointer-arrow {
+	border-bottom-color: #EF6223;
+}
+
+	.wp-toolset-pointer.wp-toolset-shortcode-pointer.wp-pointer-top .wp-pointer-arrow {
+		left: 187px;
+	}
+
+.wp-toolset-pointer.wp-pointer-right .wp-pointer-arrow-inner {
+	right: 2px;
+	border-color: transparent transparent transparent #e9e9e9;
+}
+
+.wp-toolset-pointer.wp-pointer-right .wp-pointer-arrow {
+	border-left-color: #EF6223;
+}
+
+.wp-toolset-pointer.wp-pointer-bottom .wp-pointer-arrow-inner {
+	bottom: 2px;
+	border-color: #e9e9e9 transparent transparent;
+}
+
+.wp-toolset-pointer.wp-pointer-bottom .wp-pointer-arrow {
+	border-top-color: #EF6223;
+}
+
+.wp-toolset-pointer.wp-pointer-left .wp-pointer-arrow-inner {
+	left: 2px;
+	border-color: transparent #e9e9e9 transparent transparent;
+}
+
+.wp-toolset-pointer.wp-pointer-left .wp-pointer-arrow {
+	border-right-color: #EF6223;
+}
+
+/* //// DON'T SHOW AGAIN STUFF ////////////*/
+span.dont-wrap{float:right;margin-right:12px;}
+.toolset-alert-not-again{}
+.toolset-alert-not-again-label{}
+
+/* ---------------- */
+/* TOOLSET AUTOSAVE */
+/* ---------------- */
+
+.toolset-ajax-saving-messages {
+    display: none;
+	position: fixed;
+	right: 20px;
+    top: 50px;
+    line-height: 29px;
+    padding: 2px 10px;
+    background: #fff none repeat scroll 0 0;
+	border: solid 1px #ddd;
+	color: #666;
+	-webkit-transition: all 0.15s linear;
+	-moz-transition: all 0.15s linear;
+	-ms-transition: all 0.15s linear;
+	-o-transition: all 0.15s linear;
+	transition: all 0.15s linear;
+	z-index: 1111;
+}
+
+	.toolset-ajax-saving-messages.toolset-ajax-saving-messages-success {
+		border-color: #d6e9c6;
+		background-color: #dff0d8;
+		color: #468847;
+	}
+
+	.toolset-ajax-saving-messages.toolset-ajax-saving-messages-fail {
+		border-color: #eed3d7;
+		background-color: #f2dede;
+		color: #b94a48;
+	}
+
+	.toolset-ajax-saving-messages i {
+		margin-right: 5px;
+	}

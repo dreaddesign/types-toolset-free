@@ -1,0 +1,5 @@
+{% if description.target and description.label %}
+    <p class="types-information-link">
+        <a{% if description.class or description.external %} class="{{ description.class }}{% if description.external %} types-external-link{% endif %}"{% endif %} href="{{ description.target }}"{% if description.external %} target="_blank"{% endif %}{% if description.post_type %} data-type="{{ description.post_type }}"{% endif %}{% if description.redirect_url %} data-redirect-url="{{ description.redirect_url }}"{% endif %}{% if description.forwhomloop %} data-forwhomloop="{{ description.forwhomloop }}"{% endif %}{% if description.forwhomtitle %} data-forwhomtitle="{{ description.forwhomtitle }}"{% endif %}>{{ description.label }}</a>
+    </p>
+{% endif %}

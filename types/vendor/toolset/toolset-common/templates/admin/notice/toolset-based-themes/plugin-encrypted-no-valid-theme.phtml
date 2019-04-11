@@ -1,0 +1,32 @@
+<?php
+
+$encrypt_plugin = new Toolset_Condition_Plugin_Encrypted_No_Valid_Theme();
+$theme_name = $encrypt_plugin->get_theme();
+
+if( $theme_name ): ?>
+	<h3>
+		<?php printf(
+			__( 'Toolset plugins are limited to the theme %s.', 'wpv-views' ),
+			esc_attr( $theme_name )
+		); ?>
+	</h3>
+<?php else: ?>
+	<h3>
+		<?php printf(
+			__( 'Toolset plugins are limited to a specific theme.', 'wpv-views' ),
+			esc_attr( $theme_name )
+		); ?>
+	</h3>
+<?php endif; ?>
+
+<p>
+	<?php _e( 'You can buy the full versions to use them with any theme.', 'wpv-views' ); ?>
+</p>
+
+
+<?php echo Toolset_Admin_Notices_Manager::tpl_button_primary(
+	__( 'Get Toolset', 'wpv-views' ),
+	Types_Helper_Url::get_url( 'wp-types', 'encryption-plugin-but-no-valid-theme' ),
+	true
+);
+

@@ -1,0 +1,10 @@
+.toolset-user-editors-beaver-backend .fl-builder-admin-tabs,
+.toolset-user-editors-beaver-backend .fl-builder-admin-ui h3 {
+    display:none;
+}
+
+.toolset-user-editors-beaver-backend {
+    background: #fff;
+    padding: 20px 20px 40px;
+	text-align: center;
+}

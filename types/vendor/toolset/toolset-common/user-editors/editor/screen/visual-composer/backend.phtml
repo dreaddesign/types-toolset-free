@@ -1,0 +1,16 @@
+<div style="display: none;">
+	<input type="hidden" id="post_ID" name="post_ID" value="<?php echo $this->post->ID; ?>">
+	<textarea cols="30" rows="10" id="wpv_content" name="wpv_content" data-bind="textInput: postContentAccepted"></textarea>
+	<textarea cols="30" rows="10" id="wpv_template_extra_css" name="name" data-bind="textInput: templateCssAccepted"></textarea>
+	<?php
+	wp_editor(
+		$this->post->post_content,
+		'content',
+		array(
+			'media_buttons' => true,
+		)
+	);
+	?>
+</div>
+
+<div id="wpb_visual_composer" style="padding-bottom: 5px; background: #fff;"><?php $this->editor->renderEditor( $this->post ); ?></div>

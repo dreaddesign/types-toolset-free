@@ -1,0 +1,144 @@
+.wpt-form-textarea
+, .wpt-form-textfield
+, .wpt-form-select {
+    width: 100%;
+}
+[role="button"] {
+    cursor: pointer;
+}
+.cred-form .form-group {
+    margin-bottom: 15px;
+}
+.wpt-form-textfield.hasDatepicker {
+    max-width: 150px;
+    display: inline-block;
+}
+.wpt-form-select[name*="[hour]"]
+, .wpt-form-select[name*="[minute]"] {
+    display: inline-block;
+    width: auto;
+}
+img.ui-datepicker-trigger {
+    margin-left: 5px;
+}
+.wpt-date-clear.dashicons-before {
+    vertical-align: middle;
+    line-height: 1;
+}
+.ui-datepicker-title {
+    color: inherit;
+}
+ul.wpt-form-set, ul.wpt-form-set-children {
+    list-style-type: none;
+    margin-bottom: 0;
+}
+.wpt-form-label {
+    white-space: nowrap;
+}
+.wpt-top-form-error {
+    margin-bottom: 1.5em;
+}
+.wpt-form-error {
+    display: block;
+    color: #aa0000;
+}
+.wpt-form-success {
+    display: block;
+    color: #00aa00;
+}
+.wpt-form-textfield.wpt-new-taxonomy-title
+, .wpt-taxonomy-parent {
+    margin-bottom: .5em;
+}
+.cred-taxonomy-auxilliary
+,.wpt-hierarchical-taxonomy-add-new
+,.wpt-taxonomy-show-popular-list {
+    margin-top: .5em;
+}
+.wpt-taxonomy-show-popular-list {
+    padding: .5em;
+    margin-bottom: 0;
+    border: solid 1px #ccc;
+}
+.wpt-hierarchical-taxonomy-add-new-show-hide
+, .wpt-taxonomy-popular-show-hide
+, .wpt-repadd {
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    line-height: 1;
+    display: inline-block;
+    border-bottom: 0 !important;
+    text-decoration: none !important;
+}
+.wpt-credfile-delete {
+    display: inline-block;
+}
+.wpt-credfile-delete:before {
+    vertical-align: middle;
+}
+.tagchecklist:not(:empty) {
+    margin-bottom:1em;
+}
+.tagchecklist a:before {
+    vertical-align: middle;
+    width: 1.15em;
+    height: 1.15em;
+    font-size: 1.2em;
+    margin-left: -.3em;
+}
+a.wpt-hierarchical-taxonomy-add-new-show-hide:before
+, a.wpt-taxonomy-popular-show-hide:before
+, a.wpt-repadd:before {
+    width: 1.15em;
+    height: 1.15em;
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+.wpt-hierarchical-taxonomy-add-new-show-hide.dashicons-dismiss
+, .wpt-taxonomy-popular-show-hide.dashicons-dismiss
+, .wpt-credfile-delete:before
+, .wpt-date-clear:before
+, .wpt-repdelete:before {
+    color: #707070;
+}
+.wpt-hierarchical-taxonomy-add-new-show-hide.dashicons-dismiss:hover
+, .wpt-taxonomy-popular-show-hide.dashicons-dismiss:hover
+, .wpt-credfile-delete:hover:before
+, .wpt-date-clear:hover:before
+, .wpt-repdelete:hover:before {
+    color: #aa0000;
+}
+.wpt-repctl.wpt-repctl-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.wpt-repctl + .wpt-repctl {
+    border-top: 1px solid #CCC;
+    padding-top: .5em;
+    margin-top: .5em;
+}
+.wpt-repetitive-controls {
+    max-width: 45px;
+}
+.wpt-repdrag {
+    cursor: move;
+    margin-right: 15px;
+}
+.wpt-repetitive-field {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 auto;
+    flex: 1 auto;
+}
+.cred-form input[type="checkbox"].checkbox,
+.cred-form input[type="radio"].radio {
+    display: inline-block;
+}
+
+/* STRANGE */
+.cred-form div.mce-toolbar-grp {
+    z-index: 3;
+}
+.wp-editor-container {
+    border: 1px solid #e5e5e5;
+}

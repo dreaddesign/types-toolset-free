@@ -1,0 +1,67 @@
+<tr>
+    <td>
+        <div class="types-information-td-inner">
+            <p class="types-information-paragraph toolset-dashboard-post-type">
+                {% if post_type_edit_link %}
+                    <a href="{{ post_type.get_edit_link }}">{{ post_type.name }}</a>
+                {% else %}
+                    {{ post_type.name }}
+                {% endif %}
+            </p>
+        </div>
+    </td>
+    <td>
+        <div class="types-information-td-inner">
+            <ul>
+                {% for field_group in post_type.get_field_groups() %}
+                    <li><a href="{{ field_group.get_edit_link }}&ref=dashboard">{{ field_group.get_display_name() }}</a></li>
+                {% endfor %}
+            </ul>
+
+            <p class="types-information-link">
+                <a class="button" href="{{ admin_url }}admin.php?page=types-helper&action=new-post-field-group&type={{ post_type.get_name() }}&ref=dashboard">{{ labels.create_field_group }}</a>
+            </p>
+        </div>
+    </td>
+    <td>
+        <div class="types-information-td-inner">
+            <ul>
+                {% for taxonomy in post_type.get_taxonomies() %}
+                    <li><a href="{{ taxonomy.get_edit_link }}&ref=dashboard">{{ taxonomy.name }}</a></li>
+                {% endfor %}
+            </ul>
+
+            <p class="types-information-link">
+                <a class="button" href="{{ admin_url }}admin.php?page=wpcf-edit-tax&assign_type={{ post_type.get_name() }}&ref=dashboard">{{ labels.create_taxonomy }}</a>
+            </p>
+        </div>
+    </td>
+    <td>
+        {% for information in table.get_template() %}
+            {% include 'page/dashboard/table/tbody-cell.twig' %}
+        {% endfor %}
+    </td>
+    {% if post_type.get_name() == 'page' or post_type.get_name() == 'attachment'  %}
+        <td>
+            <div class="types-information-td-inner">
+                <p class="types-information-paragraph">{{ labels.no_archive_for|format( post_type.name ) }}</p>
+            </div>
+        </td>
+    {% elseif table.get_archive( 'show-also-for-builtin' ) %}
+        <td>
+            {% for information in table.get_archive( 'show-also-for-builtin' ) %}
+                {% include 'page/dashboard/table/tbody-cell.twig' %}
+            {% endfor %}
+        </td>
+    {% endif %}
+    <td>
+        {% for information in table.get_views() %}
+            {% include 'page/dashboard/table/tbody-cell.twig' %}
+        {% endfor %}
+    </td>
+    <td>
+        {% for information in table.get_forms() %}
+            {% include 'page/dashboard/table/tbody-cell.twig' %}
+        {% endfor %}
+    </td>
+</tr>

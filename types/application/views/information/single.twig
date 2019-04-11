@@ -1,0 +1,18 @@
+
+<div class="types-information types-table-row">
+    {% if icon %}
+        <div class="types-message-icon types-table-cell">
+            <span class="{{ icon }}"></span>
+        </div>
+    {% endif %}
+
+    <div class="types-message-content types-table-cell">
+        {% for message in information.get_messages() %}
+            {%  for description in message.description %}
+                {%  if description.type %}
+                    {% include 'information/description/' ~ description.type ~ '.twig' %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>

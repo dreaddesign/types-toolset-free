@@ -1,0 +1,9 @@
+<div class="types-information-td-inner {% if information.priority %} types-information-{{ information.priority }}{% endif %}">
+
+    {% for description in information.description %}
+        {%  if description.type %}
+            {% include 'information/description/' ~ description.type ~ '.twig' %}
+        {% endif %}
+    {% endfor %}
+
+</div>

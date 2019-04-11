@@ -1,0 +1,22 @@
+<p class="types-information-link">
+    <a{% if description.class %} class="{{ description.class }}"{% endif %} href="javascript:void(0)"
+       data-types-open-dialog="types-dialog-{{ description.dialog.id }}">
+        {{ description.label }}
+    </a>
+</p>
+
+<div id="types-dialog-{{ description.dialog.id }}" style="display:none;">
+    <div class="types-message types-table-row">
+        <div class="types-message-icon types-table-cell">
+            <span class="icon-toolset-logo"></span>
+        </div>
+
+        <div class="types-message-content types-table-cell">
+            {% for description in description.dialog.description %}
+                {%  if description.type %}
+                    {% include 'information/description/' ~ description.type ~ '.twig' %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+{% extends "/setting/base.twig" %}
+
+{% block setting %}
+    {% if title %}<h3>{{ title }}</h3>{% endif %}
+    <ul>
+        {% for option in setting.get_options %}
+        <li>
+            <label>
+                <input type="hidden" data-types-setting-save="{{ setting.get_id() }}" name="{{ setting.get_id() }}[{{ option.get_id() }}]" value="off" />
+                <input type="checkbox" data-types-setting-save="{{ setting.get_id() }}" name="{{ setting.get_id() }}[{{ option.get_id() }}]" class="js-types-setting" {{ setting.checked( option.get_value(), option.get_id() ) }} value="on" autocomplete="off" />
+                {{ option.get_description() }}
+            </label>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

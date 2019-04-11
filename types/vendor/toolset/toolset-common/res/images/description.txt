@@ -1,0 +1,3 @@
+This file should hold a very brief description of images and their purpose (reference to where/how they are used):
+
+- ajax-loader-overlay.gif: Spinner displayed while loading a listing page. Toolset_Gui_Base. @since 2.2

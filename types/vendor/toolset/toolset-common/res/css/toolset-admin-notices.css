@@ -1,0 +1,190 @@
+.toolset-notice-wp {
+    position: relative;
+}
+
+.toolset-notice-custom-position {
+    clear: both;
+    background: #fff;
+    border-left: 4px solid #fff;
+    -webkit-box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, 0.1 );
+    box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, 0.1 );
+    padding: 1px 12px;
+}
+
+.toolset-notice {
+    border-left-color: #f05a29;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    position: relative;
+}
+
+.toolset-notice h1,
+.toolset-notice h2,
+.toolset-notice h3,
+.toolset-notice h4,
+.toolset-notice h5,
+.toolset-notice h6 {
+    color: #f05a29;
+}
+
+.toolset-notice > :first-child {
+    margin-top: 0 !important;
+}
+
+.toolset-notice > :nth-last-child(-n+2) {
+    margin-bottom: 0 !important;
+}
+
+.toolset-notice p {
+    margin-bottom: 13px;
+}
+
+.toolset-notice p.toolset-new-subject {
+    margin-top: 20px;
+}
+
+.toolset-button,
+.toolset-button:hover,
+.toolset-button:focus,
+.toolset-button:visited {
+    border-radius: 3px;
+    border: 0;
+    background-color: #999;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    height: 28px;
+    line-height: 26px;
+    margin-right: 5px;
+    outline-style: none;
+    padding: 0 10px 1px;
+    text-decoration: none;
+    transition-duration: 0.05s;
+    transition-property: border, background, color;
+    transition-timing-function: ease-in-out;
+}
+
+.toolset-button:hover {
+    background: #8c8c8c;
+}
+
+.toolset-button.toolset-button-primary {
+    background-color: #f05a29;
+}
+
+.toolset-button.toolset-button-primary:hover{
+    background-color: #e05628;
+}
+
+.toolset-link {
+    color: #f05a28;
+    text-decoration: none;
+}
+
+.toolset-link:active,
+.toolset-link:hover {
+    color: #e05628;
+    text-decoration: underline;
+}
+
+.toolset-external-link:after,
+.toolset-button-external-link:after {
+    font-family: dashicons;
+    font-weight: normal;
+    font-style: normal;
+    content: "\f504";
+    display: inline-block;
+    width: 15px;
+    font-size: 15px;
+    line-height: 18px;
+    vertical-align: text-top;
+    margin-top: -1px;
+    padding-left: 1px;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+.toolset-button-external-link:after {
+    padding-left: 3px;
+    padding-right: 10px;
+    margin-right: -15px;
+}
+
+.toolset-notice-wp-no-external-link-highlighting .toolset-external-link:after,
+.toolset-notice-wp-no-external-link-highlighting .toolset-button-external-link:after {
+    content: none;
+}
+
+.toolset-list {
+    padding: 2px;
+    margin: 13px 0 13px 20px;
+    list-style: disc;
+}
+
+.toolset-list-title + .toolset-list {
+    margin-top: -5px;
+}
+
+.toolset-dismiss {
+    position: absolute;
+    top: 0;
+    right: 1px;
+    border: none;
+    margin: 0;
+    padding: 9px;
+    background: none;
+    color: #b4b9be;
+    cursor: pointer;
+}
+
+.toolset-dismiss:before {
+    background: none;
+    color: #b4b9be;
+    content: "\f153";
+    display: block;
+    font: normal 16px/20px dashicons;
+    speak: none;
+    height: 20px;
+    text-align: center;
+    width: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.toolset-dismiss:hover:before,
+.toolset-dismiss:active:before,
+.toolset-dismiss:focus:before {
+    color: #f05a29;
+}
+
+.toolset-dashboard-link-top-right {
+    position: absolute;
+    left: 212px;
+    top: 28px;
+}
+
+.toolset-notice-robot {
+    min-height: 20px;
+    padding-left: 60px;
+}
+.toolset-notice-robot .toolset-robot {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    width: 50px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    background: url(../images/icon-help-message.svg) center center no-repeat #333;
+    background-size: 42px 42px;
+    box-shadow: inset 0 0 15px #111;
+}
+
+@media screen and (max-width: 850px) {
+    .toolset-dashboard-link-top-right {
+        display: none;
+    }
+}

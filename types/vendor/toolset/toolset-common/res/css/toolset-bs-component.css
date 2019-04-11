@@ -1,0 +1,195 @@
+/* CSS component */
+.toolset-bs-componenet-check-button{
+    text-align: center;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+.toolset-bs-button-p{
+    text-align: center;
+}
+
+.toolset-bs-components-dialog-sides{
+    margin:0;
+}
+.toolset-bs-components-dialog-sides-left{
+    float:left;
+    width:25%;
+    overflow:hidden;
+}
+.toolset-bs-components-dialog-sides-right{
+    float:left;
+    width:75%;
+    overflow:hidden;
+} 
+.toolset-bs-components-dialog-sides-bottom{
+    float:left;
+    width:100%;
+    overflow:hidden;
+} 
+
+span.toolset_qt_btn_group_labels_style {
+    display: block;
+    clear: both;
+    font-size: 11px;
+    font-weight: bold;
+    color: #72777c;
+    margin-left: 4px;
+}
+
+
+.mce-toolbar .mce-btn{
+    overflow: hidden;
+}
+.mce-ico{
+    text-align: initial !important;
+}
+
+.bs-quicktags-toolbar {
+    padding: 0px !important;
+    margin-top: 0px !important;
+    border: 1px solid #ddd !important;
+    border-top: 0px !important;
+    background: #f5f5f5 !important;
+    min-height: 30px;
+    border: 0px !important;
+    display: inline-block;
+}
+.bs-quicktags-toolbar>ul{
+    padding-left: 0px;
+}
+.bs-quicktags-toolbar>ul>li{
+    list-style-type: none;
+}
+
+.bs-quicktags-toolbar>ul {
+    margin: 0;
+    text-align: left;
+}
+.wpv-ct-inline-edit .bs-quicktags-toolbar{
+    min-height: 135px !important;
+}
+
+/* icons adjust */
+.bs-breadcrumbs-icon {
+    margin-left: -40px;
+}
+.bs-breadcrumbs-button {
+    width: 60px;
+}
+.bs-pagination-icon {
+    margin-left: -34px;
+}
+.bs-pagination-button {
+    width: 55px;
+}
+.bs-input_groups-icon {
+    margin-left: -8px;
+}
+.bs-input_groups-button {
+    width: 35px;
+}
+.bs-buttons-icon {
+    margin-left: -15px;
+}
+.bs-buttons-button {
+    width: 40px;
+}
+
+/* Popover */
+.pop {
+    background: #eee !important;
+    border: 1px solid #ccc !important;
+    padding: 10px !important;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    position: absolute !important;
+    right: 0;
+    margin-right: 10px !important;
+    z-index: 99;
+}
+
+.pop_right_margin{
+    margin-right: 20px !important;
+}
+.pop_right_margin_big{
+    margin-right: 25px !important;
+}
+.pop_top_margin{
+    margin-top: 20px !important;
+}
+.pop_close {
+    display: block;
+    text-align: right !important;
+}
+.pop_msg_p{
+    margin: 0px;
+}
+
+.pop_hidden{
+    display: none;
+}
+.pop_msg_p label{
+    width: 100%;
+    text-align: left !important;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.bs_button_glow_effect{
+    box-shadow: rgb(246, 146, 30) 0px 0px 5px 1px !important;
+}
+.css-components-toggle-icon{color:#555d66; position: relative; bottom:2px;right:2px;}
+.css-components-toggle-icon:before{}
+
+li.js-editor-bs-button-wrapper {
+    display: inline-block;
+}
+li.js-editor-addon-button-wrapper.js-editor-bs-button-wrapper {
+    margin: 0 2px 5px 2px;
+}
+
+.toolset-bootstrap-grid-types-container {
+	overflow: hidden;
+}
+
+.toolset-bootstrap-grid-types-documentation {
+	margin-top: 30px;
+}
+
+.toolset-bootstrap-grid-types li {
+	cursor: pointer;
+	display: block;
+	float: left;
+	height: 120px;
+	margin: 0;
+	padding: 0;
+	width: 33.333%;
+}
+
+.toolset-bootstrap-grid-types figure:hover {
+	background-color: #ededed;
+}
+
+.toolset-bootstrap-grid-types figure.selected {
+	background-color: #ffda73;
+	border: solid 1px rgb(255, 188, 0);
+}
+
+.toolset-bootstrap-grid-types .selected {
+	background: #ededed;
+}
+
+.toolset-bootstrap-grid-types figure {
+	margin: 0;
+	padding: 10px;
+}
+
+.toolset-bootstrap-grid-types img {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.toolset-bootstrap-grid-types figure span {
+	display: block;
+	text-align: center;
+}

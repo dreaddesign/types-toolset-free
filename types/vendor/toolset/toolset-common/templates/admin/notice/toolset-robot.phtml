@@ -1,0 +1,14 @@
+<?php
+/**
+ * Template File which shows the Toolset Robot
+ * This file is only build for classes which implements Toolset_Admin_Notice_Interface
+ *
+ * @var Toolset_Admin_Notice_Interface $this
+ */
+?>
+<div class="toolset-notice-wp notice toolset-notice toolset-notice-robot">
+    <div class="toolset-robot"></div>
+    <?php $this->render_content() ?>
+
+    <?php @include( dirname( __FILE__ ) . '/presets/btn-dismiss.phtml' ); ?>
+</div>

@@ -1,0 +1,21 @@
+/*
+ * We are pushing the Fusion Builder modals ("normal" and "nested columns" ones)
+ * one z-index level lower in order to have the "Toolset Shortcodes" admin bar button
+ * modal appear above them.
+ */
+.fusion-builder-modal-settings-container,
+.fusion_builder_row_inner .fusion-builder-row-content {
+	z-index: 99998 !important;
+}
+
+.post-new-php #colorbox,
+.post-new-php #cboxOverlay,
+.post-new-php #cboxWrapper,
+.post-php #colorbox,
+.post-php #cboxOverlay,
+.post-php #cboxWrapper,
+.post-type-view-template #colorbox,
+.post-type-view-template #cboxOverlay,
+.post-type-view-template #cboxWrapper {
+	z-index: 99999 !important
+}

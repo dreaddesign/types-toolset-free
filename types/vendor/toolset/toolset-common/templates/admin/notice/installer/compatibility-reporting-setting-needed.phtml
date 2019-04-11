@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * Template for the notice from OTGS\Toolset\Common\Interop\Handler\InstallerCompatibilityReporting.
+ *
+ * Not to be used anywhere else.
+ *
+ * @var Toolset_Admin_Notice_Interface $this
+ *
+ * @since 2.3.0 First release
+ */
+
+$context = $this->get_template_context();
+$policy_url = toolset_getarr( $context, 'policy_url' );
+
+?>
+<div class="toolset-notice-wp notice toolset-notice toolset-notice-installer-compatibility-setting">
+
+	<p>
+		<span class="toolset-notice-installer-compatibility-setting__header">
+			<?php _e( 'Do you want to get faster Toolset support and compatibility alerts?', 'wpv-views' ); ?>
+		</span>
+		<br/>
+		<span class="toolset-notice-installer-compatibility-setting__details" style="font-size: 10px;">
+			<?php _e( 'Report to toolset.com which theme and plugins you are using.', 'wpv-views' ); ?>
+			<a href="<?php echo esc_attr( $policy_url ) ?>" target="_blank">
+				<?php _e( 'Privacy and data usage policy', 'wpv-views' ); ?>
+				<i class="fa fa-external-link" aria-hidden="true"></i>
+			</a>
+		</span>
+	</p>
+
+	<p>
+		<?php
+		echo Toolset_Admin_Notices_Manager::tpl_button_primary(
+			__( 'Yes, I want faster compatibility and support', 'wpv-views' ), null, false,
+			'toolset-notice-installer-compatibility-setting__accept-btn'
+		);
+		echo Toolset_Admin_Notices_Manager::tpl_button_secondary(
+			__( 'No, don\'t send any reports', 'wpv-views' ), null, false,
+			'toolset-notice-installer-compatibility-setting__decline-btn'
+		);
+		?>
+		<span class="toolset-notice-installer-compatibility-setting__error"></span>
+		<span class="spinner toolset-notice-installer-compatibility-setting__spinner"></span>
+	</p>
+
+
+</div>

@@ -1,0 +1,11 @@
+.toolset-ct-button-logo img {
+	height: 15px;
+}
+.toolset-ct-button-logo:before {
+	font-size: 15px !important;
+}
+
+.toolset-divi-logo-for-ct-button:before {
+	font-family: 'ETmodules';
+	content: '\e626';
+}

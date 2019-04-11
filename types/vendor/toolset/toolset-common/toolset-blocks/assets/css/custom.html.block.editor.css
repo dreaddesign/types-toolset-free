@@ -1,0 +1,16 @@
+/**
+ * Colors
+ */
+/**
+ * Often re-used variables
+ */
+/**
+* Core Custom HTML Gutenberg block extension editor style.
+*
+* This file contains all the needed styles to be used inside Gutenberg editor when the core Custom HTML Gutenberg
+* block is extended to include the Fields and Views button.
+*/
+.wpv-block-button span {
+  vertical-align: middle; }
+
+/*# sourceMappingURL=custom.html.block.editor.css.map*/

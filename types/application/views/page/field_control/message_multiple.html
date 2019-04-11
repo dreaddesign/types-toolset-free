@@ -1,0 +1,8 @@
+<%= (typeof(mainMessage) != 'undefined' && 0 < mainMessage.length ? '<p>' + mainMessage + '</p>' : '' ) %>
+<ol>
+    <%
+        _.each(messages, function(message) {
+            print('<li>' + message + '</li>');
+        });
+    %>
+</ol>

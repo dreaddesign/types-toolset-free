@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+    <title>Toolset Common Library</title>
+    <parser>
+        <target>docs/phpdoc</target>
+    </parser>
+    <transformer>
+        <target>docs/phpdoc</target>
+    </transformer>
+    <files>
+        <directory>./inc/m2m</directory>
+        <directory>./inc/autoloaded</directory>
+        <directory>./inc/controller</directory>
+        <ignore>tests/*</ignore>
+        <ignore>vendor/*</ignore>
+        <ignore>lib/Twig/*</ignore>
+    </files>
+    <transformations>
+        <template name="responsive-twig"/>
+    </transformations>
+</phpdoc>

@@ -1,0 +1,35 @@
+<?php
+/**
+ * Template File
+ * This file is only build for classes which implements Toolset_Admin_Notice_Interface
+ *
+ * @var Toolset_Admin_Notice_Interface $this
+ *
+ * @since 2.3.0 First release
+ */
+
+$theme = wp_get_theme();
+$theme_name = $theme->get( 'Name' );
+$theme_name = ! empty( $theme_name )
+	? $theme->get( 'Name' )
+	: __( 'this theme', 'wpv-views' );
+?>
+<h3>
+    <?php _e( 'Do you want to prepare this site for quick editing with Toolset?', 'wpv-views' ); ?>
+</h3>
+
+<p class="toolset-list-title"><?php _e( 'We will:', 'wpv-views' ); ?></p>
+<ul class="toolset-list">
+	<li>
+		<?php printf( __( 'Automatically install the Toolset plugins that are needed for %s', 'wpv-views' ), $theme_name ); ?>
+	</li>
+	<li>
+		<?php printf( __( 'Set up layouts, template, archives and other site elements for %s', 'wpv-views' ), $theme_name ); ?>
+	</li>
+</ul>
+
+<?php
+echo Toolset_Admin_Notices_Manager::tpl_button_primary(
+    __( 'Run Installer', 'wpv-views' ),
+    admin_url( 'index.php?page=toolset-site-installer' )
+);

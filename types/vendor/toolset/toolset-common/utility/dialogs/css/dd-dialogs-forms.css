@@ -1,0 +1,517 @@
+/* ------------- */
+/* Dialogs Forms */
+/* ------------- */
+
+/*
+	This file contains generic forms styles ONLY.
+	General dialogs styles should go into dd-dialogs-general.css
+	Styles for specific dialogs should go into dd-dialogs.css
+*/
+
+/* Form wrapper, It can be a <div> <form> or <ul> */
+.ddl-form {
+	margin: 0 0 15px 0;
+}
+
+ul.ddl-form { /* If .ddl-form class is added directly to <ul> element */
+	list-style: none;
+}
+
+.ddl-form ul { /* If .ddl-form class is added to <ul> element wrapper */
+	margin: 0;
+}
+
+/* form elements */
+.ddl-form > li,
+.ddl-form > p,
+.ddl-form .ddl-form-item,
+.ddl-form .ddl-form-item > p,
+.ddl-form .ddl-form-item .fields-group,
+.ddl-form .ddl-form-item .ddl-form-item {
+	margin: 0 0 5px 0;
+}
+
+.ddl-form > p:first-child {
+	margin-top: 0;
+}
+.ddl-form > p:last-child {
+	margin-bottom: 0;
+}
+
+/* clearfix */
+.ddl-form:after,
+.ddl-form > li:after,
+.ddl-form > p:after,
+.ddl-form .ddl-form-item:after,
+.ddl-form > ul:before,
+.ddl-form > li:before,
+.ddl-form > p:before,
+.ddl-form:before,
+.ddl-form .ddl-form-item:before,
+.ddl-form .ddl-form-item > ul:after,
+.ddl-form .ddl-form-item > li:after,
+.ddl-form .ddl-form-item > p:after,
+.ddl-form .ddl-form-item .fields-group:after,
+.ddl-form .ddl-form-item > p:before,
+.ddl-form .ddl-form-item .fields-group:before {
+	display: table;
+	content: " ";
+}
+
+.ddl-form:after,
+.ddl-form > ul:after,
+.ddl-form li:after,
+.ddl-form > p:after,
+.ddl-form .ddl-form-item:after,
+.ddl-form .ddl-form-item > ul:after,
+.ddl-form .ddl-form-item > p:after,
+.ddl-form .ddl-form-item .fields-group:after {
+	clear: both;
+}
+
+.ddl-form label,
+.ddl-form legend {
+	display: block;
+	float: left;
+	margin: 0 0px 0 0;
+	padding: 1px 4px 1px 0px;
+	width: 168px;
+	vertical-align: top;
+	font-weight: bold;
+	font-size: 13px;
+	text-align:right;
+}
+.ddl-form .cred-popup-box label, .ddl-form .cred-popup-box legend{text-align: left;}
+
+
+.ddl-form input,
+.ddl-form textarea, .ddl-form select {
+	font-size: 13px;
+}
+
+.ddl-form input[type="text"],
+.ddl-form input[type="number"],
+.ddl-form textarea,
+.ddl-form select,
+.ddl-form .radio, /* radios and checkboxes should be wrapped in .radio or .checkbox element */
+.ddl-form .checkbox,
+.ddl-form .fields-group,
+.ddl-form .desc,
+.ddl-form .toolset_select2-container {
+	display: block;
+	float: right;
+	clear: right;
+	width: 555px;
+	color: #474747;
+}
+
+.ddl-form .ddl-form-input-alert {
+	display: block;
+	float: right;
+	clear: right;
+	width: 536px;
+	padding: 5px 14px 5px 14px;
+}
+
+
+.ddl-form select.ddl-narrow-width, .ddl-form input.ddl-narrow-width{
+	width: 277px;
+	margin-right: 278px;
+}
+
+.ddl-form input[type="text"].ddl-form-indent,
+.ddl-form input[type="number"].ddl-form-indent,
+.ddl-form textarea.ddl-form-indent,
+.ddl-form select.ddl-form-indent,
+.ddl-form .radio.ddl-form-indent, /* radios and checkboxes should be wrapped in .radio or .checkbox element */
+.ddl-form .checkbox.ddl-form-indent,
+.ddl-form .fields-group.ddl-form-indent,
+.ddl-form .desc.ddl-form-indent,
+.ddl-form .toolset_select2-container.ddl-form-indent {
+	width: 534px;
+}
+
+.ddl-form .desc.ddl-form-indent {
+	float: right !important;
+}
+
+.ddl-form .ddl-form-input-alert.ddl-form-indent {
+	width: 506px;
+}
+
+.ddl-form .desc {
+	margin: 5px 0 0 0;
+	color: #999;
+	font-size: 10px;
+}
+
+.ddl-form .fields-group > p:first-child {
+	margin-top: 0;
+}
+.ddl-form .fields-group > p:last-child {
+	margin-bottom: 0;
+}
+
+.ddl-form .radio label,
+.ddl-form .checkbox label,
+.ddl-form fieldset label,
+.ddl-form .fields-group label {
+	margin: 0;
+	width: auto;
+	font-weight: normal;
+}
+
+.ddl-form .radio,
+.ddl-form .checkbox {
+	margin-right: 0;
+	font-weight: normal;
+}
+
+.ddl-form .radio input,
+.ddl-form .checkbox input {
+	vertical-align: middle;
+}
+
+.ddl-form fieldset label,
+.ddl-form .fields-group label {
+	float: none;
+	margin: 0 10px 0 0;
+}
+
+.ddl-form .fields-group > ul > li,
+.ddl-form .fields-group > p,
+.ddl-form .fields-group > .ddl-form-item {
+	margin: 0 0 5px 0;
+}
+
+.ddl-form .fields-group input[type="text"],
+.ddl-form .fields-group input[type="number"],
+.ddl-form .fields-group textarea,
+.ddl-form .fields-group select,
+.ddl-form .fields-group .radio,
+.ddl-form .fields-group .checkbox,
+.ddl-form .fields-group .desc,
+.ddl-form .fields-group .toolset_select2-container {
+	float: none;
+}
+
+.ddl-form .radio, /* radios and checkboxes should be wrapped in .radio or .checkbox element */
+.ddl-form .checkbox,.ddl-form .fields-group .radio,
+.ddl-form .fields-group .checkbox{
+    float:left;
+}
+
+/* Alternative vertical layout. .ddl-form-item-fullwidth should be added to: .ddl-form-item, <li> or <p> tag */
+.ddl-form .ddl-form-item-fullwidth label,
+.ddl-form .ddl-form-item-fullwidth legend,
+.ddl-form .ddl-form-item-fullwidth input[type="text"],
+.ddl-form .ddl-form-item-fullwidth input[type="number"],
+.ddl-form .ddl-form-item-fullwidth textarea,
+.ddl-form .ddl-form-item-fullwidth select,
+.ddl-form .ddl-form-item-fullwidth .desc,
+.ddl-form .ddl-form-item-fullwidth .ddl-form .toolset_select2-container,
+.ddl-form .ddl-form-item-fullwidth .fields-group {
+	display: block;
+	width: 100%;
+	float: none;
+}
+
+.ddl-form .ddl-form-item-fullwidth legend {
+	margin-bottom: 10px;
+}
+
+/* .ddl-form-inputs-inline should be added to inputs direct wrapper element, not to .ddl-form-item <li> or <p> tag  */
+.ddl-form .ddl-form-inputs-inline label,
+.ddl-form .ddl-form-inputs-inline input[type="text"],
+.ddl-form .ddl-form-inputs-inline input[type="number"],
+.ddl-form .ddl-form-inputs-inline textarea,
+.ddl-form .ddl-form-inputs-inline select {
+	display: inline-block;
+	float: none;
+	margin: 0 10px 10px 0;
+	width: auto;
+	vertical-align: baseline;
+}
+
+.ddl-form .ddl-form-inputs-inline label {
+	margin: 0;
+}
+
+.ddl-form .ddl-form-inputs-inline .radio,
+.ddl-form .ddl-form-inputs-inline .checkbox {
+	margin: 0 10px 10px 0;
+	vertical-align: baseline;
+}
+
+/* Validation */
+.ddl-form .invalid,
+.ddl-form .invalid:focus,
+.ddl-form .invalid .toolset_select2-choices {
+	border-color: #e9322d;
+	box-shadow: 0 0 6px #f8b9b7 inset;
+}
+.ddl-form .invalid.toolset_select2-container {
+	border: none;
+	box-shadow: none;
+}
+/* Dialogs Forms END */
+
+/* ----------------- */
+/* Repeatable fields */
+/* ----------------- */
+.ddl-repeat-field-container {
+}
+
+.ddl-repeat-field,
+.ddl-repeat-field-placeholder {
+	padding: 10px 0;
+	border-top: 1px solid #ededed;
+	background-color: #fff;
+}
+
+.ddl-repeat-field-placeholder {
+	border: 1px dashed #ccc;
+}
+
+.ddl-repeat-field:hover {
+	background: #fafafa;
+}
+
+/* clearfix */
+.ddl-repeat-field:before,
+.ddl-repeat-field:after,
+.ddl-repeat-field > ul:before,
+.ddl-repeat-field > li:before,
+.ddl-repeat-field > p:before,
+.ddl-repeat-field > ul:after,
+.ddl-repeat-field > li:after,
+.ddl-repeat-field > p:after {
+	display: table;
+	content: " ";
+}
+
+.ddl-repeat-field:after,
+.ddl-repeat-field > ul:after,
+.ddl-repeat-field li:after,
+.ddl-repeat-field > p:after {
+	clear: both;
+}
+
+.ddl-form-button-wrap {
+	padding-top: 15px;
+	clear: both;
+	text-align: right;
+}
+
+.ddl-form-button-wrap button {
+	margin-left: 0;
+}
+
+.ddl-repeat-field-toolbar {
+	position: relative;
+}
+.ddl-repeat-field:only-child .ddl-repeat-field-toolbar {
+	display: none;
+}
+
+.ddl-repeat-field-container:only-of-type .ddl-repeat-field-toolbar {
+	display: none;
+}
+
+.ddl-repeat-field-toolbar .icon-remove {
+	position: absolute;
+	right: 5px;
+	color: #d54e21;
+	opacity: .8;
+	cursor: pointer;
+}
+
+.ddl-repeat-field-toolbar .icon-resize-vertical {
+	display: inline-block;
+	width: 20px;
+	color: #0074a2;
+	text-align: center;
+	opacity: .6;
+	cursor: ns-resize;
+}
+.ddl-repeat-field-toolbar i:hover {
+	opacity: 1;
+}
+/* Repeating fields END */
+
+/*
+	This file contains generic forms styles ONLY.
+	General dialogs styles should go into dd-dialogs-general.css
+	Styles for specific dialogs should go into dd-dialogs.css
+*/
+
+/* Add a custom styling for CRED */
+.ddl-cred-css .ddl-form h3 [class^="icon-layouts"] {
+	position: relative;
+	top: -4px;
+}
+
+
+/* Message inside the form */
+.ddl-form .ddl-dialog-form-message{display: block;
+	float: right;
+	clear: right;
+	width: 540px;}
+
+input#searchbar-input{float:none;}
+
+.cm-s-default { z-index: 0; }
+
+/* SHOW MORE POSTS */
+li.toolset_select2-results-dept-0.toolset_select2-result.show-more-posts-options{font-weight:bold;color:#f05a28;}
+i.load-posts-spinner{color:black;}
+i.load-posts-spinner:hover{color:white;}
+/* ////// LANGUAGE SWITCHER///////// */
+.ddl-single-assignments-box-controls{
+    display: block;
+    clear: both;
+    float: left;
+    width: 100%;
+}
+.ddl-single-assignments-posts-who-controls{
+    float: left;
+}
+.ddl-single-assignments-box-lang-controls{
+    float:right;
+}
+/* OVERRIDES */
+fieldset.ddl-dialog-fieldset{margin:0px 0px 0px;padding:10px 0px 0px;}
+fieldset.ddl-dialog-fieldset span{padding-right:6px;}
+i.ddl-wpml-flag{float:left;width:20px;height:20px;padding-right:4px;}
+
+/* //////// MARKUP CONTROLS IN CELL DIALOG START/////////*/
+.css-styling-controls{padding-top:12px;border-top:1px solid #ededed;margin-top:20px;}
+.ddl-markup-controls{padding-top:0px!important;}
+/* extra cells*/
+.visual-editor-editor-switch-container-wrap{margin-top:6px!important;}
+.ddl-dialog-button-wrap{}
+/* IMAGE CELL*/
+.ddl-button-media-huge{width:340px;height:56px!important;font-size:16px!important;margin-top:30px!important;margin-bottom:30px!important;}
+.ddl-form-button-image-wrap{text-align:center;padding-top:0px;}
+.ddl-imagebox-cell-preview-wrap img{margin-bottom:6px;}
+ul.form-image-box-wrap li{}
+.ddl-border-bottom{border-bottom:1px solid #ededed;padding-bottom:20px!important;margin-bottom:20px!important;}
+ul.form-image-box-wrap li:last-child{}
+.ddl-align-center{text-align:center!important;display:block;}
+.ddl-manual-width{width:192px!important;}
+.ddl-manual-width-190{width:190px!important;}
+.ddl-manual-width-201{}
+.label{text-align:left;}
+.ddl-input-wrap{display: block;
+    float: right;
+    clear: right;
+    width: 555px;}
+/*////// SLIDER CELL OVERRIDES //////////*/
+.ddl-input-half-width{width:50%!important;float:left!important;margin-left: -1px;}
+.question-mark-and-the-mysterians{margin-left:3px;cursor:pointer;color:rgba(128, 128, 128, 0.71);}
+.ddl-input-two-thirds-width{width:76%!important;margin-right:2px;float:left!important;margin-left: -1px;}
+.ddl-measure-unit{font-size:11px;margin-left:3px;}
+/* //////// MARKUP CONTROLS IN CELL DIALOG END /////////*/
+.ddl-zero{height:1px!important;padding:0px!important;margin:0px!important;}
+.checkbox-smaller{width:95%!important;margin-right:0px!important;padding-right:0px!important;display:inline!important;}
+.ddl-button-group{width:140px!important;}
+/* ////////// FORM CT CELL OVERRIDES ///////////////////////// */
+.ddl-dialog-label{
+    display: block!important;
+    float: left!important;
+    margin: 0 0px 0 0!important;
+    padding: 1px 0!important;
+    width: 168px!important;
+    vertical-align: top!important;
+    font-weight: bold!important;
+    font-size: 13px!important;
+}
+.ddl-dialog-form-span-inner{
+    font-weight: bold!important;
+    font-size: 13px!important;
+    margin-right:6px;
+    margin-left:6px;
+}
+.ddl-ct-cell-content-controls-box{padding-bottom: 6px;}
+.ddl-ct-cell-content-controls-box a.button-small{margin-bottom:4px;}
+.ddl-button-open-wrap{
+    width: 77%;
+    text-align: right;
+    display: inline-block;
+}
+/* /// JS and CSS Editors Controls //////////*/
+.wpv-editor-metadata-toggle{
+    border-top: none;
+    display: block;
+    margin: 0;
+    padding: 0 28px 0 0;
+    height: 35px;
+    line-height: 35px;
+    border: solid 1px #ccc;
+    font-weight: bold;
+    cursor: pointer;
+    background: #e5e5e5;
+    background: -moz-linear-gradient(top, #e5e5e5 0%, #f4f4f4 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5e5e5), color-stop(100%,#f4f4f4));
+    background: -webkit-linear-gradient(top, #e5e5e5 0%,#f4f4f4 100%);
+    background: -o-linear-gradient(top, #e5e5e5 0%,#f4f4f4 100%);
+    background: -ms-linear-gradient(top, #e5e5e5 0%,#f4f4f4 100%);
+    background: linear-gradient(to bottom, #e5e5e5 0%,#f4f4f4 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#f4f4f4',GradientType=0 );
+}
+/*///////////// DUPLICATE LAYOUT TOOLSET RESOURCES DIALOG //////////////////////*/
+table.ddl-duplicate-selection-table{width:100%;}
+.ddl-duplicate-selection-table-title-row th{width:25%;text-align:left;font-weight:bold;padding:8px;}
+.ddl-duplicate-selection-table-data-row td{width:25%;text-align:left;font-weight:normal;padding:8px;}
+.ddl-duplicate-selection-table-data-row td.ddl-duplicate-selection-table-data-column-input-wrap{}
+.ddl-duplicate-selection-table-data-row td input[type="checkbox"]{margin-left:54px;}
+.ddl-duplicate-selection-table-data-row td input[type="radio"]{margin-left:54px;}
+.ddl-duplicate-selection-table-data-row td.ddl-duplicate-anchor{cursor:pointer;font-size:11px;margin-left:4px;}
+.ddl-duplicate-selection-table-data-row td.ddl-duplicate-result-first{width:18%;}
+.ddl-duplicate-selection-table-data-row td.ddl-duplicate-result-middle{width:30%;}
+.ddl-duplicate-selection-table-data-row td.ddl-duplicate-result-last{width:10%;padding-left:35px;}
+.ddl-dialog-content-main{border-right:none!important;}
+.ddl-duplicate-template-alert{width:95%;line-height: 1.3!important;}
+a.ddl-duplicate-anchor{cursor:pointer;}
+.ddl-duplicate-info-details{display:none;}
+/*///////// IFRAME OVERRIDES //////////////////////////////////////////////////////*/
+.ddl-setting-for-layouts-container-in-iframe div.js-default-dialog-content, .ddl-setting-for-layouts-container-in-iframe div.row-not-render-message{display:none;}
+.ddl-setting-for-layouts-container-in-iframe .css-styling-controls{padding-top:0px;margin-top:0px;}
+.ddl-setting-for-layouts-container-in-iframe span.desc{padding-bottom:6px;padding-top:0px;width:555px!important;}
+input.css-id-control{width:555px!important;}
+/*
+@todo This should not be here, cotainers with specific size limitations should have a specific classname, not the generic Toolset dialogs ones.
+*/
+.toolset-ui-dialog:not(.toolset-ui-dialog-responsive) .toolset-shortcode-gui-dialog-container{min-height:92px!important;max-height:370px!important;}
+/*///////// OVERRIDES /////////////////*/
+/*
+@todo This should not be here, buttonpanes with specific styles should have a specific classname, not the generic Toolset dialogs ones.
+*/
+.ui-dialog-buttonpane{padding: 8px;}
+
+.ddl-youtube-video-cell span.px_box {
+    display: block;
+    margin-top: 4px;
+    float: right;
+    clear: right;
+    width: auto;
+    text-align: left;
+}
+.ddl-youtube-video-cell .ddl-layout-video-input{
+    display: block;
+    float: left !important;
+    clear: right;
+    width: 515px !important;
+    color: #474747;
+}
+
+.ddl-youtube-video-cell .desc {
+    margin: 5px 0 0 0;
+    color: #999;
+    width: 545px !important;
+    font-size: 10px;
+    text-align: left;
+}
+.ddl-youtube-video-cell label{
+    width: 211px !important;
+}

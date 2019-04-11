@@ -1,0 +1,34 @@
+{#
+    Pseudo metabox container.
+
+    Allows us to render metaboxes properly on pages that originally don't support it.
+
+    Usage:
+        Add your metaboxes via add_meta_box(). You can use different Twig templates for
+        each of them.
+
+        Then, simply include this template:
+        {% include '@toolset/pseudo_metabox_container.twig' %}
+
+    @since m2m
+#}
+
+{# Everything that's not toolset-prefixed absolutely must be here, otherwise the styling breaks completely. #}
+<div id="poststuff" class="toolset-actual-content-wrapper" style="">
+    <div id="post-body" class="metabox-holder columns-2">
+        {#
+            Note that postbox containers must be numbered from the right side to the left,
+            otherwise the styling is not applied properly. It was a couple of fun hours figuring this out.
+         #}
+        <div id="postbox-container-2" class="postbox-container">
+            {% block postboxesDefault %}
+                {{ do_meta_boxes() }}
+            {% endblock %}
+        </div>
+        <div id="postbox-container-1" class="postbox-container">
+            {% block postboxesSide %}
+                {{ do_meta_boxes( 'side' ) }}
+            {% endblock %}
+        </div>
+    </div>
+</div>

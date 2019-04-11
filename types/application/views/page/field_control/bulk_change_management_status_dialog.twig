@@ -1,0 +1,11 @@
+{#
+    Dialog for confirming bulk action "manage/stop managing field with Types"
+
+    @since 2.0
+#}
+<p data-bind="visible: willBeManagedByTypes">{{ strings.youAreAboutToManageFields }}</p>
+<p data-bind="visible: !willBeManagedByTypes()">{{ strings.youAreAboutToStopManagingFields }}</p>
+<ul style="list-style: disc inside" data-bind="foreach: fieldDefinitions">
+    <li data-bind="text: displayName"></li>
+</ul>
+<p>{{ strings.confirmContinue }}</p>

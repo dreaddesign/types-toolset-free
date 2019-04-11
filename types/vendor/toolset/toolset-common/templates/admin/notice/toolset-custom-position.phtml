@@ -1,0 +1,15 @@
+<?php
+/**
+ * Template File
+ * This notice template is not using WordPress's "notice" class, means it can be placed anywhere.
+ *
+ * @var Toolset_Admin_Notice_Interface $this
+ *
+ * @since 2.3.0 First release
+ */
+?>
+<div class="toolset-notice-wp toolset-notice-custom-position toolset-notice">
+    <?php $this->render_content() ?>
+
+    <?php @include( dirname( __FILE__ ) . '/presets/btn-dismiss.phtml' ); ?>
+</div>

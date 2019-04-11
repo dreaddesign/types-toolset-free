@@ -1,0 +1,22 @@
+<?php
+/**
+ * Template File
+ * This file is only build for classes which implements Toolset_Admin_Notice_Interface
+ *
+ * @var Toolset_Admin_Notice_Interface $this
+ *
+ * @since 2.3.0 First release
+ */
+if( ! isset( $this ) || ! $this instanceof Toolset_Admin_Notice_Interface ) {
+	return;
+}
+
+// template
+if( ! $this->is_temporary() && $this->is_dismissible_permanent() ) {
+	$id = $this->is_dimissibile_globally() ? $this->get_id() . '$' : $this->get_id();
+	echo '<button type="button" class="toolset-dismiss" ' .
+	     'data-'.Toolset_Admin_Notices_Manager::JS_TRIGGER_NOTICE_DISMISSIBLE.'="' . esc_attr( $id ) . '">' .
+	     '<span class="screen-reader-text">Dismiss this notice.</span></button>';
+} else {
+	echo '<span></span>';
+}

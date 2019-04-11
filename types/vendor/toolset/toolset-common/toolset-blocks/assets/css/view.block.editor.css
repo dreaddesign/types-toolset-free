@@ -1,0 +1,147 @@
+/**
+ * Colors
+ */
+/**
+ * Often re-used variables
+ */
+/**
+* Toolset View block editor style.
+*
+* This file contains all the needed styles to be used inside Gutenberg editor when the Toolset View block is used.
+*/
+.wp-block-toolset-view .wp-block-toolset-view-placeholder span {
+  display: inline-block;
+  line-height: initial; }
+
+.wp-block-toolset-view .wp-block-toolset-view-placeholder p {
+  margin: 0.5em 0; }
+
+.wp-block-toolset-view-preview .wpv-view-info-warning {
+  padding: 10px;
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border: 1px solid #faebcc;
+  border-radius: 3px;
+  text-align: center;
+  overflow: hidden; }
+
+.wp-block-toolset-view-preview div {
+  margin: 0 0 5px 0; }
+
+.wp-block-toolset-view-preview div.more div {
+  border: 1px dashed #e2e4e7; }
+
+.wp-block-toolset-view-preview .wpv-view-block-preview {
+  height: 30px !important;
+  line-height: 30px !important;
+  overflow: hidden;
+  background-color: #fff !important;
+  color: #000 !important;
+  border: 1px solid #e2e4e7; }
+  .wp-block-toolset-view-preview .wpv-view-block-preview.wpv-long-preview {
+    height: 100% !important; }
+
+.wp-block-toolset-view-preview .view-information span {
+  vertical-align: middle;
+  display: table-cell; }
+
+.wp-block-toolset-view-preview div.loading {
+  border: none; }
+  .wp-block-toolset-view-preview div.loading span {
+    background: url("../img/loader.gif") no-repeat;
+    background-size: contain;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 25px;
+    margin: 0 5px 0 0; }
+  .wp-block-toolset-view-preview div.loading div {
+    margin: 0;
+    background-color: #f8f9f9 !important; }
+  .wp-block-toolset-view-preview div.loading .wpv-view-block-preview {
+    border: none; }
+
+.wp-block-toolset-view-preview .view-information .view-purpose::before {
+  font-family: 'dashicons', sans-serif;
+  font-size: 25px;
+  content: "\f164"; }
+
+.wp-block-toolset-view-preview .view-information .view-style::before {
+  font-family: 'dashicons', sans-serif;
+  font-size: 25px;
+  content: "\f163"; }
+
+.wp-block-toolset-view-preview .view-information .view-purpose,
+.wp-block-toolset-view-preview .view-information .view-style {
+  display: table; }
+
+.wp-block-toolset-view-preview .view-information .view-title {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center; }
+  .wp-block-toolset-view-preview .view-information .view-title span {
+    display: block; }
+
+.wp-block-toolset-view-preview .block-preview-list {
+  overflow: hidden; }
+  .wp-block-toolset-view-preview .block-preview-list .row-fluid [class*="span-preset"] {
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    margin-left: 2.12766%;
+    width: 100%;
+    height: 70px;
+    border-radius: 3px;
+    background-color: #0074a2;
+    color: #fff;
+    text-align: center;
+    line-height: 70px; }
+  .wp-block-toolset-view-preview .block-preview-list .row-fluid [class*="span-preset"]:first-child {
+    margin-left: 0; }
+  .wp-block-toolset-view-preview .block-preview-list .row-fluid .controls-row [class*="span-preset"] + [class*="span-preset"] {
+    margin-left: 2.12766%; }
+  .wp-block-toolset-view-preview .block-preview-list .row-fluid .span-preset12 {
+    width: 100%; }
+  .wp-block-toolset-view-preview .block-preview-list .row-fluid .span-preset11 {
+    width: 91.4894%; }
+  .wp-block-toolset-view-preview .block-preview-list .row-fluid .span-preset10 {
+    width: 82.9787%; }
+  .wp-block-toolset-view-preview .block-preview-list .row-fluid .span-preset9 {
+    width: 74.4681%; }
+  .wp-block-toolset-view-preview .block-preview-list .row-fluid .span-preset8 {
+    width: 65.9574%; }
+  .wp-block-toolset-view-preview .block-preview-list .row-fluid .span-preset7 {
+    width: 57.4468%; }
+  .wp-block-toolset-view-preview .block-preview-list .row-fluid .span-preset6 {
+    width: 48.9362%; }
+  .wp-block-toolset-view-preview .block-preview-list .row-fluid .span-preset5 {
+    width: 40.4255%; }
+  .wp-block-toolset-view-preview .block-preview-list .row-fluid .span-preset4 {
+    width: 31.9149%; }
+  .wp-block-toolset-view-preview .block-preview-list .row-fluid .span-preset3 {
+    width: 23.4043%; }
+  .wp-block-toolset-view-preview .block-preview-list .row-fluid .span-preset2 {
+    width: 14.8936%; }
+  .wp-block-toolset-view-preview .block-preview-list .row-fluid .span-preset1 {
+    width: 6.38298%; }
+
+.toolset-gutenberg-block-image.toolset-view-gutenberg-block::before {
+  font-family: 'onthegosystems-icons', sans-serif !important;
+  content: "\f11e";
+  font-size: 20px; }
+
+.toolset-gutenberg-block-placeholder.toolset-view-gutenberg-block::before {
+  font-family: 'onthegosystems-icons', sans-serif !important;
+  content: "\f11e";
+  font-size: 64px; }
+
+.wp-block-toolset-view-inspector .results-notice ol {
+  margin-left: 2em; }
+
+.wp-block-toolset-view-inspector .results-notice li {
+  list-style-position: inside; }
+
+.wp-block-toolset-view-inspector .components-panel__row label {
+  max-width: 100%; }
+
+/*# sourceMappingURL=view.block.editor.css.map*/

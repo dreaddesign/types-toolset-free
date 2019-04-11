@@ -1,0 +1,72 @@
+<div class="js-code-editor code-editor content-editor" data-name="complete-output-editor">
+	<div class="code-editor-toolbar js-code-editor-toolbar">
+		<ul>
+			<?php
+			do_action( 'wpv_views_fields_button', 'wpv_content' );
+			// Action to add Toolset buttons to the Content Template editor
+			do_action( 'toolset_action_toolset_editor_toolbar_add_buttons', 'wpv_content', 'views' );
+
+			// Needed so CRED displays a button instead of a fake anchor tag
+			if( wpv_ct_editor_is_cred_button_supported() ) {
+				define("CT_INLINE", "1");
+				do_action('wpv_cred_forms_button', 'wpv_content');
+			}
+			wpv_ct_editor_content_add_media_button( $this->medium->get_id(), 'wpv_content' );
+			?>
+		</ul>
+	</div>
+	<!--suppress HtmlFormInputWithoutLabel -->
+        <textarea cols="30" rows="10" id="wpv_content" name="wpv_content"
+                  data-bind="textInput: postContentAccepted"></textarea>
+
+	<!--
+		CSS editor
+	-->
+	<div class="wpv-editor-metadata-toggle" data-bind="click: toggleCssEditor">
+            <span class="wpv-toggle-toggler-icon">
+                <i data-bind="attr: { class: isCssEditorExpanded() ? 'icon-caret-up fa fa-caret-up icon-large fa-lg' : 'icon-caret-down fa fa-caret-down icon-large fa-lg' }"></i>
+            </span>
+		<i class="icon-pushpin fa fa-thumb-tack" data-bind="widthToggleVisible: isCssPinVisible"></i>
+		<strong><?php _e( 'CSS editor', 'wpv-views' ); ?></strong>
+	</div>
+	<div class="wpv-ct-assets-inline-editor"
+	     data-bind="editorVisible: isCssEditorExpanded"
+	     data-target-editor="css">
+		<!--suppress HtmlFormInputWithoutLabel -->
+            <textarea name="name" id="wpv_template_extra_css"
+                      data-bind="textInput: templateCssAccepted"></textarea>
+	</div>
+
+	<!--
+		JS editor
+	-->
+	<div class="wpv-editor-metadata-toggle" data-bind="click: toggleJsEditor">
+            <span class="wpv-toggle-toggler-icon">
+                <i data-bind="attr: { class: isJsEditorExpanded() ? 'icon-caret-up fa fa-caret-up icon-large fa-lg' : 'icon-caret-down fa fa-caret-down icon-large fa-lg' }"></i>
+            </span>
+		<i class="icon-pushpin fa fa-thumb-tack" data-bind="widthToggleVisible: isJsPinVisible"></i>
+		<strong><?php _e( 'JS editor', 'wpv-views' ); ?></strong>
+	</div>
+	<div class="wpv-ct-assets-inline-editor"
+	     data-bind="editorVisible: isJsEditorExpanded"
+	     data-target-editor="js">
+		<!--suppress HtmlFormInputWithoutLabel -->
+            <textarea name="name" id="wpv_template_extra_js"
+                      data-bind="textInput: templateJsAccepted"></textarea>
+	</div>
+
+	<?php wpv_formatting_help_content_template(); ?>
+</div>
+
+<p class="update-button-wrap">
+        <span class="update-action-wrap">
+            <span class="js-wpv-message-container"></span>
+            <span class="spinner ajax-loader" data-bind="spinnerActive: isContentSectionUpdating"></span>
+        </span>
+	<button data-bind="
+                enable: isContentSectionUpdateNeeded,
+                attr: { class: isContentSectionUpdateNeeded() ? 'button-primary' : 'button-secondary' },
+                click: contentSectionUpdate">
+		<?php _e( 'Update', 'wpv-views' ); ?>
+	</button>
+</p>

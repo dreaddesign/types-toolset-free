@@ -1,0 +1,41 @@
+<?php
+/**
+ * Template File
+ * This file is used to create the overlay displayed above the Template editor on the Content Template edit page, when
+ * the Native post editor is selected.
+ *
+ * @since 2.5.0
+ */
+$ct_id = (int) wpv_getget( 'ct_id', 0 );
+$medium_allowed_frontend_templates = $this->medium->get_frontend_templates();
+?>
+
+<div id="anchor-usage-section" class="toolset-user-editors-native-backend js-toolset-user-editors-native-backend">
+    <h3><?php echo sprintf( __( '%1$s', 'wpv-views' ), $this->editor->get_name() ); ?></h3>
+    <?php
+    if ( count( $medium_allowed_frontend_templates ) == 1 ) {
+        $template = array_pop( $medium_allowed_frontend_templates );
+	?>
+    <p>
+		<?php
+		echo sprintf(
+			__( 'This Content Template is used in %1$s, and uses the native post editor.', 'wpv-views' ),
+			'<strong>' . $template['form-option-label'] . '</strong>'
+		);
+		?>
+    </p>
+	<?php
+    } else {
+    ?>
+    <p>
+		<?php _e( 'This Content Template uses the native post editor.', 'wpv-views' ); ?>
+    </p>
+    <?php
+    }
+    ?>
+    <div>
+        <a href="<?php echo admin_url( 'post.php?post=' . $ct_id . '&action=edit' ); ?>" class="button button-primary button-large">
+            <?php _e( 'Launch native editor', 'wpv-views' ); ?>
+        </a>
+    </div>
+</div>

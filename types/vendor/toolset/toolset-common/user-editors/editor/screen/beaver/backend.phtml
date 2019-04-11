@@ -1,0 +1,89 @@
+<?php
+/**
+ * Template File
+ * This file is used to create the overlay displayed above the Template editor on the Content Template edit page, when
+ * the Beaver Builder is selected.
+ *
+ * @since 2.5.0
+ */
+$medium_allowed_frontend_templates = $this->medium->get_frontend_templates();
+?>
+
+<div id="anchor-usage-section" class="toolset-user-editors-beaver-backend js-toolset-user-editors-beaver-backend">
+
+	<h3><?php echo sprintf( __( '%1$s frontend editor', 'wpv-views' ), $this->editor->get_name() ); ?></h3>
+	<?php
+	/*
+	 * NO allowed frontend template
+	 * happens e.g. for Content Templates when no item under 'Usage' is selected
+	 */
+	if( empty( $medium_allowed_frontend_templates ) ) { ?>
+
+		<p>
+			<?php _e( 'Usage of this Content Template is not specified, so the editor will not preview any specific post.', 'wpv-views' ); ?>
+		</p>
+
+	<?php
+	/*
+	 * ONE allowed frontend template
+	 * in this case we don't create a selection
+	 * and place the single template in a hidden input
+	 */
+	} elseif( count( $medium_allowed_frontend_templates ) == 1 ) {
+		$template = array_pop( $medium_allowed_frontend_templates ); ?>
+		
+		<p>
+			<?php
+				echo sprintf(
+					__( 'This Content Template is used in %1$s, '
+					. 'so you will be able to preview one of them.', 'wpv-views' ),
+					'<strong>' . $template['form-option-label'] . '</strong>'
+				);
+			?>
+		</p>
+
+		<input id="toolset-beaver-builder-single-template"
+		       type="hidden" value="<?php echo $template['path']; ?>"
+		       data-preview-domain="<?php echo $template['domain']; ?>"
+		       data-preview-slug="<?php echo $template['slug']; ?>" />
+
+	<?php
+	/*
+	 * MULTIPLE allowed frontend templates
+	 * user gets an select of all available templates
+	 */
+	} else {
+		$stored_template_path = get_post_meta( $this->medium->get_id(), $this->editor->get_option_name(), true ); ?>
+
+		<p>
+			<?php
+				_e( 'This Content Template has several usages. '
+				. 'Choose the one you want to see in the frontend editor:', 'wpv-views' );
+			?>
+		</p>
+
+
+		<p>
+			<select id="toolset-user-editors-beaver-template-file">
+				<?php foreach( $medium_allowed_frontend_templates as $template ):
+						$selected = ( $template['path'] == $stored_template_path['template_path'] ) 
+							? ' selected="selected"'
+							: ''; ?>
+
+					<option value="<?php echo $template['path'] ?>"<?php echo $selected; ?>
+							data-preview-domain="<?php echo $template['domain']; ?>"
+					        data-preview-slug="<?php echo $template['slug']; ?>">
+						<?php echo $template['form-option-label']; ?>
+					</option>
+				<?php endforeach; ?>
+			</select>
+		</p>
+
+		<?php
+
+	} ?>
+	
+	<?php // Button "Start Beaver Frontend Editor"
+	FLBuilderAdminPosts::render(); ?>
+
+</div>

@@ -1,0 +1,37 @@
+<?php
+
+$encrypt_plugin = new Toolset_Condition_Theme_Toolset_Based_Inactive();
+$theme_name = $encrypt_plugin->get_theme() ? $encrypt_plugin->get_theme() : '';
+
+?>
+
+<p>
+	<?php printf(
+		__( ' You are trying to use a version of Toolset plugins, that was created especially for %s theme, but a ' .
+            'different theme is powering this site.  You can use this version of Toolset plugins only with %s. ' .
+            'To use Toolset with other themes, you need to buy the plugins.', 'wpv-views' )
+			, $theme_name, $theme_name
+	); ?>
+</p>
+
+<?php echo Toolset_Admin_Notices_Manager::tpl_button_primary(
+	__( 'Learn more about Toolset', 'wpv-views' ),
+	'https://toolset.com/' .
+	'?utm_source=typesplugin' .
+	'&utm_campaign=types' .
+	'&utm_medium=toolset-dashboard' .
+	'&utm_term=toolset-based-theme-inactive' .
+	'&utm_content=learn-more',
+	true
+);
+
+echo Toolset_Admin_Notices_Manager::tpl_button_primary(
+	__( 'Pricing', 'wpv-views' ),
+	'https://toolset.com/buy/' .
+	'?utm_source=typesplugin' .
+	'&utm_campaign=types' .
+	'&utm_medium=toolset-dashboard' .
+	'&utm_term=toolset-based-theme-inactive' .
+	'&utm_content=pricing',
+	true
+);

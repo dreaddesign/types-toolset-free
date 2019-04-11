@@ -1,0 +1,187 @@
+{% extends "@generic_page/base.twig" %}
+
+{% block title %}{{ strings.misc.pageTitle }}{% endblock %}
+
+{% block content %}
+
+    <div id="message" data-bind="threeModeVisibility: messageVisibilityMode, attr: { class: 'notice is-dismissible ' + messageNagClass() }">
+        <p data-bind="html: displayedMessage().text"></p>
+        <button class="notice-dismiss" data-bind="click: removeDisplayedMessage"></button>
+    </div>
+
+    <div class="types-listing-spinner">
+        <img src="{{ assets.loaderOverlay }}" />
+    </div>
+
+    <div class="types-listing-wrapper" style="display: none;">
+        <div class="tablenav top">
+
+            <div class="alignleft actions bulkactions">
+                <select data-bind="options: bulkActions, optionsText: 'displayName', optionsValue: 'value', value: selectedBulkAction"></select>
+                <input id="doaction" class="button action" type="submit"
+                       value="{{ strings.misc.applyBulkAction }}"
+                       data-bind="click: onBulkAction, enable: isBulkActionAllowed"/>
+                <span class="spinner" data-bind="style: { visibility: (isSpinnerVisible() ? 'visible' : 'hidden') }"></span>
+            </div>
+
+            {#
+                Pagination, WordPress-style.
+
+                This might deserve moving into a separate Twig template with more universal "paginator" object to bind on.
+                That would be very easy to reuse.
+
+                @since 2.0
+            #}
+            <div class="alignright" style="margin-left: 10px;">
+                <div class='tablenav-pages'>
+                    <span class="displaying-num"><span data-bind="text: itemCount"></span> {{ strings.misc.items }}</span>
+                    <span class='pagination-links'>
+
+                        {# enabled and disabled versions of both buttons #}
+                        <a class='next-page' data-bind="visible: !isFirstPage(), click: gotoPage('first') "><span>&laquo;</span></a>
+                        <a class='last-page' data-bind="visible: !isFirstPage(), click: gotoPage('previous')"><span>&lsaquo;</span></a>
+                        <span class="tablenav-pages-navspan" data-bind="visible: isFirstPage">&laquo;</span>
+                        <span class="tablenav-pages-navspan" data-bind="visible: isFirstPage">&lsaquo;</span>
+
+                        <span class="paging-input">
+                            <input data-bind="value: currentPageSafe" class='current-page' type='text' name='paged' size='1' />
+                            {{ strings.misc.of }} <span data-bind="text: totalPages" class='total-pages'></span>
+                        </span>
+
+                        {# enabled and disabled versions of both buttons #}
+                        <a class='next-page' data-bind="visible: !isLastPage(), click: gotoPage('next')"><span>&rsaquo;</span></a>
+                        <a class='last-page' data-bind="visible: !isLastPage(), click: gotoPage('last')"><span>&raquo;</span></a>
+                        <span class="tablenav-pages-navspan" data-bind="visible: isLastPage">&rsaquo;</span>
+                        <span class="tablenav-pages-navspan" data-bind="visible: isLastPage">&raquo;</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="alignright">
+                <p class="search-box">
+                    <input type="search" class="types-field-search" placeholder="{{ strings.misc.searchPlaceholder }}" data-bind="textInput: searchString" />
+                </p>
+            </div>
+
+        </div>
+
+
+        <table class="wp-list-table widefat posts striped" cellspacing="0">
+            <thead>
+            {% block th %}
+                <tr>
+                    <td scope="col" class="manage-column column-bulk-actions check-column">
+                        <input type="checkbox" name="bulk_select" data-bind="
+                            checked: allVisibleFieldDefinitionSelection,
+                            disable: (fieldDefinitionsToShow().length == 0)" />
+                    </td>
+                    <td scope="col" class="manage-column">
+                        <a class="sort-column" data-bind="click: onSort('displayName')">
+                            {{ strings.column.name }}
+                            <i data-bind="attr: { class: sortIconClass('displayName') }" ></i>
+                        </a>
+                    </td>
+                    <td scope="col" class="manage-column">
+                        {{ strings.column.groups }}
+                    </td>
+                    <td scope="col" class="manage-column">
+                        <a class="sort-column" data-bind="click: onSort('slug')">
+                            {{ strings.column.slug }}
+                            <i data-bind="attr: { class: sortIconClass('slug') }" ></i>
+                        </a>
+                    </td>
+                    <td scope="col" class="manage-column">
+                        <a class="sort-column" data-bind="click: onSort('typeForSorting')">
+                            {{ strings.column.type }}
+                            <i data-bind="attr: { class: sortIconClass('typeForSorting') }" ></i>
+                        </a>
+                    </td>
+                    <td scope="col" class="manage-column">
+                        <a class="sort-column" data-bind="click: onSort('metaKey')">
+                            {{ strings.column.metaKey }}
+                            <i data-bind="attr: { class: sortIconClass('metaKey') }" ></i>
+                        </a>
+                    </td>
+                </tr>
+            {% endblock %}
+            </thead>
+
+            <!-- ko if: (fieldDefinitionsToShow().length > 0) -->
+            <tbody data-bind="foreach: fieldDefinitionsToShow">
+                <tr data-bind="attr: { class: trClass }">
+
+                    <td>
+                        <input type="checkbox" data-bind="checked: isSelectedForBulkAction" />
+                    </td>
+
+                    {# Definition name and row actions. #}
+                    <td>
+                        <span class="spinner" data-bind="style: { visibility: (isSpinnerVisible() ? 'visible' : 'hidden') }"></span>
+
+                        <span data-bind="text: displayName"></span>
+
+                        <div class="row-actions">
+                            <span class="edit" data-bind="visible: isUnderTypesControl">
+                                <a data-bind="click: onChangeAssignmentAction">{{ strings.rowAction.changeAssignment }}</a> |
+                            </span>
+                            <span class="edit" data-bind="visible: isUnderTypesControl">
+                                <a data-bind="click: onChangeTypeAction">{{ strings.rowAction.changeType }}</a> |
+                            </span>
+                            <span class="edit">
+                                <a data-bind="text: display.changeManagementStatusActionLabel, click: onChangeManagementStatusAction"></a>
+                            </span>
+                            {# <span class="edit" data-bind="visible: canChangeCardinality">
+                                <a data-bind="click: onChangeCardinalityAction, text: display.changeCardinalityActionLabel">
+                                    <!-- turn into repetitive / turn into single -->
+                                </a>
+                            </span> #}
+                            <span class="delete" data-bind="visible: isUnderTypesControl">
+                                | <a data-bind="click: onDeleteAction">{{ strings.rowAction.delete }}</a>
+                            </span>
+                        </div>
+                    </td>
+
+                    {# List of groups the field belongs to (if managed by Types) #}
+                    <td data-bind="html: display.groupList"></td>
+
+                    <td>
+                        <span data-bind="text: slug"></span>
+                    </td>
+
+                    <td>
+                        <span data-bind="html: display.type"></span>
+                        <span data-bind="visible: isRepetitive" title="{{ strings.misc.thisFieldIsRepeating }}">*</span>
+                    </td>
+
+                    <td>
+                        <code><small data-bind="text: metaKey"></small></code>
+                    </td>
+
+                </tr>
+            </tbody>
+            <!-- /ko -->
+
+            <!-- ko if: (fieldDefinitionsToShow().length == 0) -->
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox" disabled />
+                    </td>
+
+                    <td colspan="5">{{ strings.misc.noItemsFound|e }}</td>
+                </tr>
+            </tbody>
+            <!-- /ko -->
+
+            <tfoot>
+            {{ block('th') }}
+            </tfoot>
+        </table>
+
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    <script id="types_model_data" type="text/plain">{{ js_model_data }}</script>
+{% endblock %}

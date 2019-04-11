@@ -1,0 +1,48 @@
+<?php
+
+$encrypt_plugin = new Toolset_Condition_Theme_Toolset_Based_Active();
+$theme_name = $encrypt_plugin->get_theme() ? $encrypt_plugin->get_theme() : '';
+
+?>
+
+<h3>
+    <?php _e( 'This is the main dashboard for Toolset plugins.', 'wpv-views' ); ?>
+</h3>
+
+<p>
+	<?php
+		_e( 'From here, you can add, change or remove custom types, fields and taxonomies. You can also change the way ' .
+            'content displays on the front-end.', 'wpv-views' );
+	?>
+</p>
+
+<p>
+	<?php printf(
+		__( 'Please note that you are using a version of Toolset plugins which came with %s theme. ' .
+             'You can use Toolset freely on any site that you create with %s. ' .
+		    'To use with other themes, you will need to buy Toolset.', 'wpv-views' )
+			, $theme_name, $theme_name
+	); ?>
+</p>
+
+<?php echo Toolset_Admin_Notices_Manager::tpl_button_primary(
+	__( 'Learn more about Toolset', 'wpv-views' ),
+	'https://toolset.com/' .
+	'?utm_source=typesplugin' .
+	'&utm_campaign=types' .
+	'&utm_medium=toolset-dashboard' .
+	'&utm_term=toolset-based-theme-active' .
+	'&utm_content=learn-more',
+	true
+);
+
+echo Toolset_Admin_Notices_Manager::tpl_button_primary(
+	__( 'Pricing', 'wpv-views' ),
+	'https://toolset.com/buy/' .
+	'?utm_source=typesplugin' .
+	'&utm_campaign=types' .
+	'&utm_medium=toolset-dashboard' .
+	'&utm_term=toolset-based-theme-active' .
+	'&utm_content=pricing',
+	true
+);

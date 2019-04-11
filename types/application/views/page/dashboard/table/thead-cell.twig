@@ -1,0 +1,19 @@
+{{ content.title }}
+
+{% if content.description %}
+<a  id="types-pointer-target-{{ content.id }}" href="javascript:void(0)" class="dashicons dashicons-editor-help"
+    data-types-open-pointer="types-pointer-{{ content.id }}" style="position:relative;"></a>
+
+<div id="types-pointer-{{ content.id }}" style="display:none;">
+    <div class="types-pointer-inner">
+        <div class="types-message-content types-table-cell">
+
+            {% for description in content.description %}
+                {%  if description.type %}
+                    {% include 'information/description/' ~ description.type ~ '.twig' %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}

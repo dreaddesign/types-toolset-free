@@ -1,0 +1,50 @@
+.fl-builder .wpv-dialog ul {
+    list-style-type: none;
+}
+
+#wpv-ct-preview-post {
+    width: 135px;
+    display: inline;
+	font-size:13px;
+    margin: 5px 0 5px 5px;
+}
+
+/*.fl-builder-actions .fl-builder-button.fl-builder-discard-button,*/
+.fl-builder-actions .fl-builder-button.fl-builder-draft-button {
+    display: none !important;
+}
+
+.fl-builder-bar {
+	z-index: 100010;
+}
+
+.fl-builder .toolset-ui-dialog.ui-widget {
+    z-index: 1000002 !important;
+}
+
+.fl-builder .ui-widget-overlay {
+    z-index: 1000001 !important;
+}
+
+.fl-builder-bar-content {
+    height: 100% !important;
+}
+
+.toolset-editors-frontend-editor-extra {
+    display: none;
+    border-left: solid 1px #ccc;
+    padding: 0;
+    font-size: 13px !important;
+}
+
+.toolset-editors-frontend-editor-extra-content-icon-container {
+    display: inline-block;
+}
+
+.toolset-editors-frontend-editor-extra-content-icon-container i {
+    color: #F05A29;
+    font-size: 30px;
+    vertical-align: middle;
+    float: left;
+    height: 100%;
+}

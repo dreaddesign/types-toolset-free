@@ -1,0 +1,20 @@
+{#
+    Dialog for changing the field groups where a field definition belongs.
+
+    @since 2.0
+#}
+{% if groups is empty %}
+    <p>{{ strings.noFieldGroups }}</p>
+{% else %}
+    <ul>
+        {% for group in groups %}
+            <li style="float: left; width: 33%;">
+                <label>
+                    <input type="checkbox" data-bind="checked: isGroupChecked('{{ group.slug }}')"/>
+                    &nbsp;
+                    {{ group.displayName|e }}
+                </label>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

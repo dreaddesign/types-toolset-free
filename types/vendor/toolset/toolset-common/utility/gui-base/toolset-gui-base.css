@@ -1,0 +1,271 @@
+/*
+    Toolset GUI base styles.
+
+    Used for the generic and listing pages.
+
+    @since 2.2
+*/
+
+#toolset-page-content .sort-icon-inactive {
+    color: #ccc !important;
+}
+
+#toolset-page-content table.wp-list-table td.manage-column > a.sort-column {
+    cursor: pointer;
+}
+
+#toolset-page-content a.a-without-href {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/*
+    Table row styling
+*/
+#toolset-page-content .row-actions > span > a {
+    cursor: pointer;
+}
+
+/* should be moved to toolset-global.css */
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+.clearfix:after {
+    clear: both;
+}
+
+body[class*="toolset_page"] a,
+.toolset-listing-wrapper a {
+    cursor: pointer;
+}
+
+/* Red buttons. To be combined with button-primary. */
+.wp-core-ui  .toolset-danger-button {
+    background: #aa0000;
+    border-color: #900000 #650000 #650000;
+    -webkit-box-shadow: 0 1px 0 #650000;
+    box-shadow: 0 1px 0 #650000;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px #900000, 1px 0 1px #900000, 0 1px 1px #900000, -1px 0 1px #900000;
+}
+.wp-core-ui  .toolset-danger-button:hover,
+.wp-core-ui  .toolset-danger-button:focus {
+    background: #c30101;
+    border-color: #650000;
+    color: #fff;
+}
+
+
+.wp-core-ui .button-primary-toolset {
+    background: #F05A28;;
+    border-color: #d84326;
+    -webkit-box-shadow: 0 1px 0 #d84326;
+    box-shadow: 0 1px 0 #d84326;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px #d84326, 1px 0 1px #d84326, 0 1px 1px #d84326, -1px 0 1px #d84326;
+}
+
+.wp-core-ui .button-primary-toolset:hover,
+.wp-core-ui .button-primary-toolset:focus,
+.wp-core-ui .button-primary-toolset:active {
+    background: #d6410f;
+    border-color: #ab340c;
+    -webkit-box-shadow: 0 1px 0 #ab340c;
+    box-shadow: 0 1px 0 #ab340c;
+    color: #fff;
+}
+
+.wp-core-ui .button-primary-toolset:active {
+    -webkit-box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, .5), 0 1px 0 #ab340c;
+    box-shadow: inset 0 2px 5px -3px rgba(0, 0, 0, .5), 0 1px 0 #ab340c;
+}
+
+.wp-core-ui .button-primary-toolset[disabled],
+.wp-core-ui .button-primary-toolset:disabled,
+.wp-core-ui .button-primary-toolset.disabled {
+    opacity: .65;
+}
+
+
+
+/*/should be moved to toolset-global.css*/
+
+
+#toolset-page-content .toolset-page-spinner {
+    height: 400px;
+    position: relative;
+}
+
+#toolset-page-content .toolset-page-spinner > img {
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+
+/* Handle too long dialog titles. */
+.ui-dialog-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+}
+
+/* Red buttons. To be combined with button-primary. */
+.toolset-red-button {
+    background-color: #FF4444 !important;
+    border-color: #DE2020 !important;
+    box-shadow: #DE2020 0 1px 0 0 !important;
+
+    text-shadow: 0 -1px 1px red, 1px 0 1px red, 0 1px 1px red, -1px 0 1px red !important;
+}
+
+/* Button in a row */
+.toolset-button-in-row + .toolset-button-in-row {
+    margin-left: 8px;
+}
+
+
+/* Override styling from basic.css in Types back to default. */
+body.wp-admin button.ui-corner-all.toolset-button-in-dialog {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+/*
+    For table that contains labels and inputs in two columns.
+
+    Adjustments to make it look like legacy Types tables.
+*/
+table.toolset-field-table tbody td:first-child {
+    text-align: right;
+    vertical-align: middle;
+    min-width: 200px;
+    width: 20%;
+}
+
+/*
+  Input
+ */
+.toolset-input-inline {
+    margin-bottom: 5px;
+}
+
+.toolset-input-inline:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.toolset-input-inline label {
+    box-sizing: border-box;
+    width: 25%; /* fallback old browsers */
+    width: calc(0% + 150px);
+    float: left;
+    padding-right: 10px;
+}
+
+.toolset-input-inline > div {
+    box-sizing: border-box;
+    width: 75%; /* fallback old browsers */
+    width: calc(100% - 150px);
+    float: right;
+}
+
+.toolset-input-inline > div > input[type=text],
+.toolset-input-inline > div > textarea {
+    margin: 1px;
+    width: 100%;
+}
+
+/*
+  Toolset Postbox, basically same style as WordPress postbox
+  (For the case you need the same style, but different functionality, e.g. Field Groups)
+ */
+.toolset-postbox {
+    position: relative;
+    min-width: 255px;
+    border: 1px solid #e5e5e5;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 0;
+    line-height: 1;
+    width: 99%; /* fallback old browsers */
+    width: calc( 100% - 5px );
+}
+
+.toolset-postbox h3.toolset-postbox-title {
+    font-size: 14px;
+    padding: 8px 12px;
+    margin: 0;
+    line-height: 1.4;
+    border-bottom: 1px solid #eee;
+}
+
+.toolset-postbox .toolset-collapsible-handle {
+    display: block;
+    float: right;
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.toolset-postbox .toolset-collapsible-handle:before {
+    right: 12px;
+    font: 400 20px/1 dashicons;
+    speak: none;
+    display: inline-block;
+    padding: 8px 10px;
+    top: 0;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: none !important;
+    content: '\f142'
+}
+
+.toolset-postbox.toolset-collapsible-closed .toolset-collapsible-handle:before {
+    content: '\f140';
+}
+
+.toolset-postbox .toolset-collapsible-inside {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+
+/*
+ Toolset Collapsable
+ */
+.toolset-collapsible-inside {
+    display: block;
+}
+
+.toolset-collapsible-closed .toolset-collapsible-inside {
+    display: none;
+}
+
+/**
+ * Listing first columns
+ */
+.wp-list-table td > span[data-bind*="displayName"] {
+    color: #0073aa;
+    cursor: pointer;
+}
+.wp-list-table td > span[data-bind*="displayName"]:hover {
+    color: #00a0d2;
+}

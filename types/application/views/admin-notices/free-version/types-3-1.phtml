@@ -1,0 +1,18 @@
+<?php /* not used for production yet */ ?>
+<h3>
+	<?php _e( 'A major new release of Types is available', 'wpcf' ); ?>
+</h3>
+
+<p class="toolset-list-title">
+	<?php _e( 'Types 3.1, released on ...' , 'wpcf' ); ?>
+</p>
+
+<p>
+    <input type="checkbox" id="free-plugin-offers" name="dismiss-similar-notices[]" value="<?php echo Toolset_Admin_Notices_Manager::SIMILAR_NOTICES_FREE_PLUGIN_SHOWS_PAID_FEATURES; ?>" />
+    <label for="free-plugin-offers"><?php _e( 'Don’t show similar offers again', 'wpcf' ); ?></label>
+</p>
+
+<p>
+	<span data-toolset-dismissible="<?php echo Types_Admin_Notices_Free_Version::NOTICE_TYPES_3_1; ?>"
+          class="toolset-button toolset-button-primary"><?php _e( 'Got it', 'wpcf' ); ?></span>
+</p>

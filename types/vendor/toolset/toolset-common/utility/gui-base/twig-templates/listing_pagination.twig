@@ -1,0 +1,32 @@
+{#
+    Pagination, WordPress-style.
+
+    Used as a part of the listing.twig template. No need to touch this directly.
+
+    @since 2.2
+#}
+<div class="alignright" style="margin-left: 10px;">
+    <div class='tablenav-pages'>
+        <span class="displaying-num"><span data-bind="text: itemCount"></span> {{ strings.misc.items }}</span>
+            <span class='pagination-links'>
+
+                {# enabled and disabled versions of both buttons #}
+								{# Wrapping the observable within a function avoids to be executed during rendering #}
+                <a class='next-page' data-bind="visible: !isFirstPage(), click: function() {gotoPage('first')} "><span>&laquo;</span></a>
+                <a class='last-page' data-bind="visible: !isFirstPage(), click: function() {gotoPage('previous')}"><span>&lsaquo;</span></a>
+                <span class="tablenav-pages-navspan" data-bind="visible: isFirstPage">&laquo;</span>
+                <span class="tablenav-pages-navspan" data-bind="visible: isFirstPage">&lsaquo;</span>
+
+                <span class="paging-input">
+                    <input data-bind="value: currentPageSafe" class='current-page' type='text' name='paged' size='1' />
+                    {{ strings.misc.of }} <span data-bind="text: totalPages" class='total-pages'></span>
+                </span>
+
+                {# enabled and disabled versions of both buttons #}
+                <a class='next-page' data-bind="visible: !isLastPage(), click: function() {gotoPage('next')}"><span>&rsaquo;</span></a>
+                <a class='last-page' data-bind="visible: !isLastPage(), click: function() {gotoPage('last')}"><span>&raquo;</span></a>
+                <span class="tablenav-pages-navspan" data-bind="visible: isLastPage">&rsaquo;</span>
+                <span class="tablenav-pages-navspan" data-bind="visible: isLastPage">&raquo;</span>
+            </span>
+    </div>
+</div>

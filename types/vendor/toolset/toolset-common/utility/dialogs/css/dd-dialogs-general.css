@@ -1,0 +1,312 @@
+/*
+	This file should contain generic dialogs styles only.
+	Styles for dialogs forms are in the dd-forms.css file
+	Styles for specific dialogs are in the dd-dialogs.css file
+ */
+
+/* ------- */
+/* DIALOGS */
+/* ------- */
+
+/* Dialogs global */
+.ddl-dialogs-container {
+	display: none;
+}
+
+.ddl-dialog {
+	position: relative;
+	width: 800px;
+	background: #fff;
+	box-shadow: 0 0 15px rgba(0,0,0,.4);
+}
+
+/*
+	Add auto-width class to make dialog width adapt automatically to contents
+	But use it wisely! Dialogs forms are designed for fixed width
+	If auto-width is set you can use only fullwidth forms ( .ddl-form-item-fullwidth class );
+*/
+.ddl-dialog.auto-width {
+	width: auto;
+	min-width: 400px;
+}
+
+	.ddl-dialog-header,
+	.ddl-dialog-content,
+	.ddl-dialog-footer {
+		overflow: hidden;
+		margin: 0;
+		padding: 10px;
+		border: 1px solid #ededed;
+		background: #fafafa;
+        position:relative;
+	}
+
+	.ddl-dialog-header{
+		padding-top: 9px;
+		padding-bottom: 9px;
+	}
+
+	.ddl-dialog-footer{
+		padding-top: 8px;
+		padding-bottom: 7px;
+	}
+
+	.ddl-dialog-content {
+		overflow-y: auto;
+		padding-right: 10px;
+		max-height: 400px;
+		border-width: 0 0 0 0; /*no content borders*/
+		background: #fff;
+	}
+
+	.auto-width .ddl-dialog-content {
+		padding-right: 10px;
+	}
+
+	/* .h-lt-X classes are added dynamicaly to the HTML tag. See more details in dd_layouts_common_scripts.js */
+	.h-lt-1100 .ddl-dialog-content,
+	.h-lt-1100 .layouts-views-loading {
+		max-height: 870px;
+	}
+	.h-lt-1050 .ddl-dialog-content,
+	.h-lt-1050 .layouts-views-loading {
+		max-height: 820px;
+	}
+	.h-lt-1000 .ddl-dialog-content,
+	.h-lt-1000 .layouts-views-loading {
+		max-height: 770px;
+	}
+	.h-lt-950 .ddl-dialog-content,
+	.h-lt-950 .layouts-views-loading {
+		max-height: 720px;
+	}
+	.h-lt-900 .ddl-dialog-content,
+	.h-lt-900 .layouts-views-loading{
+		max-height: 670px;
+	}
+	.h-lt-850 .ddl-dialog-content,
+	.h-lt-850 .layouts-views-loading {
+		max-height: 620px;
+	}
+	.h-lt-800 .ddl-dialog-content,
+	.h-lt-800 .layouts-views-loading {
+		max-height: 570px;
+	}
+	.h-lt-750 .ddl-dialog-content,
+	.h-lt-750 .layouts-views-loading {
+		max-height: 520px;
+	}
+	.h-lt-700 .ddl-dialog-content,
+	.h-lt-700 .layouts-views-loading {
+		max-height: 470px;
+	}
+	.h-lt-650 .ddl-dialog-content,
+	.h-lt-650 .layouts-views-loading {
+		max-height: 420px;
+	}
+	.h-lt-600 .ddl-dialog-content,
+	.h-lt-600 .layouts-views-loading {
+		max-height: 370px;
+	}
+	.h-lt-550 .ddl-dialog-content,
+	.h-lt-550 .layouts-views-loading {
+		max-height: 320px;
+	}
+	.h-lt-500 .ddl-dialog-content,
+	.h-lt-500 .layouts-views-loading {
+		max-height: 220px;
+	}
+
+	.ddl-dialog-content::-webkit-scrollbar {
+		width: 12px;
+		height: 12px;
+		border-left: 1px solid #f1f1f1;
+		background-color: #fafafa;
+	}
+	.ddl-dialog-content::-webkit-scrollbar:hover {
+		background-color: #eee;
+	}
+	.ddl-dialog-content::-webkit-scrollbar-thumb {
+		min-width: 13px;
+		min-height: 12px;
+		background-color: rgba(0, 0, 0, .1);
+	}
+	.ddl-dialog-content::-webkit-scrollbar-thumb:hover {
+		background-color: rgba(0, 0, 0, .2);
+	}
+	.ddl-dialog-content::-webkit-scrollbar-thumb:active {
+		background-color: rgba(0, 0, 0, .3);
+	}
+
+	.h-lt-1100 .ddl-dialog-content.no-scrollbar {
+		padding-right: 20px;
+		max-height: none;
+	}
+
+	.ddl-dialog-content > :first-child {
+		margin-top: 0;
+	}
+
+		/* Dialog tabs */
+		.ddl-dialog .ui-tabs-nav {
+			border-bottom: 1px solid #ddd;
+            overflow: hidden;
+		}
+
+			.ddl-dialog .ui-tabs-nav li {
+				position: relative;
+				top: 1px;
+				display: inline-block;
+				margin: 0 5px 0 0;
+				padding: 5px;
+				outline: none;
+				border: 1px solid #ddd;
+				border-radius: 3px 3px 0 0;
+				background: #eee;
+                float:left;
+			}
+		   .ddl-dialog .ui-tabs-nav .ui-tabs-active {
+				border-bottom: 1px solid #fff;
+				background: #fff;
+		   }
+
+				.ddl-dialog .ui-tabs-nav a {
+					outline: none;
+					color: #333;
+					text-decoration: none;
+				}
+
+		.ddl-popup-tab {
+			padding: 0px 0 0 10px;
+		}
+		
+		.ddl-popup-tab-full {
+			margin-top: -14px;
+			margin-bottom: 5px;
+			border: 1px solid #ddd;
+			padding: 10px 0 0 10px;
+		}
+		
+		.ddl-tab-right {
+			float: right !important;
+		}
+		
+		/* Dialog tabs END */
+
+		.ddl-video-toolbar {
+			position: relative;
+			top: -10px;
+			left: -10px;
+			overflow: hidden;
+			margin-right: -30px;
+		}
+
+		.ddl-video-container {
+			margin-bottom: 10px;
+		}
+
+		.ddl-video-container:empty {
+			margin: 0;
+		}
+
+		.ddl-dialog-content-main {
+		}
+		.ddl-dialog-content-main:empty {
+			display: none;
+		}
+
+	.ddl-dialog-header {
+		border-width: 0 0 1px 0;
+	}
+
+		.ddl-dialog-header .icon-remove {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			cursor: pointer;
+            font-size:14px;
+		}
+
+		.ddl-dialog-header .icon-remove:hover {
+			color: #00a0d2;
+		}
+
+		.ddl-dialog-header h2 {
+			margin: 0;
+			padding: 0 20px 0 0;
+			font-weight: normal;
+			font-size: 18px;
+            font-weight: 600;
+		}
+
+	.ddl-dialog-footer {
+		clear: both;
+		text-align: right;
+	}
+
+	.ddl-dialog-content .ddl-section-title {
+		margin-top : 0px;
+		margin-bottom : 0px;
+		padding: 1px 0px 1px 5px;
+		border-left: 1px solid #CCC;
+	}
+/* Dialogs global END */
+
+
+/* New Layout: Select Parent*/
+label.set-parent-layout-select{
+	width: 150px !important;
+	float:left !important;
+	margin-left: -2px !important;
+}
+.set-parent-layout-select select{
+	width:145px;	
+}
+.set-parent-layout-checkbox{
+	float:left !important;
+	width:350px !important;
+	margin-top: 6px !important;
+	display: inline-block;
+}
+/* New Layout: Select Parent*/
+
+
+/*
+	This file should contain generic dialogs styles only.
+	Styles for dialogs forms are in the dd-forms.css file
+	Styles for specific dialogs are in the dd-dialogs.css file
+ */
+
+/* OVERRIDES FOR CREATION DIALOG
+    @Riccardo: I am placing these rules here since I cannot load dd-dialog.css in post edit page
+    since it completely changes the rules for the editor sidebar
+*/
+ul.post-types-list-in-layout-editor{padding: 0px 0px 10px 10px;}
+.close-change-use{float:left;}
+.create-layout-form-dialog .change-layout-use-section{margin-left:15px;}
+.assign-checkboxes-elements-wrap{display:block;clear:both;}
+.assign-checkboxes-elements-wrap label{float:left;display:inline-block;clear:right;font-size: 13px;}
+label.post-types-apply-to-all-selection-label{display:none;}
+label.post-types-apply-to-all-selection-label input[type="checkbox"]{margin-left:4px;}
+.ddl-change-layout-use-for-post-types-box-wrapper .assign-checkboxes-elements-wrap label.post-types-apply-to-all-selection-label{margin-left:8px;}
+.ddl-change-layout-use-for-post-types-box-wrapper .assign-checkboxes-elements-wrap label{margin-bottom: 6px;}
+.ddl-continue-to-layout-creation{float:right;margin-left:10px!important;}
+.ddl-for-post-types-messages{float:left;padding:0px 72px 12px 24px;}
+
+/*
+ * Styling for the layouts css controls shown at bottom of CRED form
+ */
+
+.ddl-cred-css {
+	border: 1px solid #ddd;
+	padding: 10px;
+}
+
+.ddl-cred-css h3 {
+	padding: 0px 0px !important;
+	margin: 0px;
+}
+
+/* GENERAL OVERRIDES FOR TOOLSET ELEMENTS DIALOGS */
+.ddl-dialog-footer button.ddl-toolset-cell-button{margin-left:3px;}
+p.cleared{clear:both!important;padding-top:4px!important;}

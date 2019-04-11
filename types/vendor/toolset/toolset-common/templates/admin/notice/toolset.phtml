@@ -1,0 +1,15 @@
+<?php
+/**
+ * Template File
+ * This file is only build for classes which implements Toolset_Admin_Notice_Interface
+ *
+ * @var Toolset_Admin_Notice_Interface $this
+ *
+ * @since 2.3.0 First release
+ */
+?>
+<div class="toolset-notice-wp notice toolset-notice">
+    <?php $this->render_content() ?>
+
+    <?php @include( dirname( __FILE__ ) . '/presets/btn-dismiss.phtml' ); ?>
+</div>

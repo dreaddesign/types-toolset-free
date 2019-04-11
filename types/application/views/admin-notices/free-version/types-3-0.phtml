@@ -1,0 +1,95 @@
+<div class="toolset-notice-wp-no-external-link-highlighting">
+<h3>
+	<?php _e( 'A major new release of Types is available', 'wpcf' ); ?>
+</h3>
+
+<p class="toolset-list-title">
+	<?php _e( 'Types 3.0, released on 28th May 2018, includes major new features that will help you build advanced sites faster and easier.' , 'wpcf' ); ?>
+</p>
+
+
+<ul class="toolset-list">
+	<li>
+		<?php
+		echo Toolset_Admin_Notices_Manager::tpl_link(
+			__( 'Repeatable field groups', 'wpcf' ),
+			'https://toolset.com/documentation/getting-started-with-toolset/creating-and-displaying-repeatable-field-groups/' .
+			'?utm_source=typesplugin' .
+			'&utm_campaign=moving-types-to-toolset' .
+			'&utm_medium=message-about-types-3-0' .
+			'&utm_term=repeatable-field-groups',
+			true
+		);
+		?>
+	</li>
+	<li>
+		<?php
+		echo Toolset_Admin_Notices_Manager::tpl_link(
+			__( 'Post reference fields', 'wpcf' ),
+			'https://toolset.com/documentation/post-relationships/how-to-display-related-posts-with-toolset/using-post-reference-fields-to-display-information-from-a-related-post/' .
+			'?utm_source=typesplugin' .
+			'&utm_campaign=moving-types-to-toolset' .
+			'&utm_medium=message-about-types-3-0' .
+			'&utm_term=post-reference-fields',
+			true
+		);
+		?>
+	</li>
+	<li>
+		<?php
+		echo Toolset_Admin_Notices_Manager::tpl_link(
+			__( 'Many-to-many relationships', 'wpcf' ),
+			'https://toolset.com/documentation/post-relationships/' .
+			'?utm_source=typesplugin' .
+			'&utm_campaign=moving-types-to-toolset' .
+			'&utm_medium=message-about-types-3-0' .
+			'&utm_term=many-to-many-relationships',
+			true
+		);
+		?>
+	</li>
+</ul>
+
+
+<p>
+    <?php _e( 'This release is part of the paid Toolset package. It costs some money, but worth every penny (if you’re not 100% happy, you get your money back).', 'wpcf' ); ?>
+</p>
+
+<p>
+	<?php
+	echo Toolset_Admin_Notices_Manager::tpl_link(
+		__( 'Learn what’s new', 'wpcf' ),
+		'https://toolset.com/2018/05/toolset-post-relationships-release/' .
+		'?utm_source=typesplugin' .
+		'&utm_campaign=moving-types-to-toolset' .
+		'&utm_medium=message-about-types-3-0' .
+		'&utm_term=learn-whats-new',
+		true
+	);
+	?>
+
+	&nbsp; 
+
+	<?php
+	echo Toolset_Admin_Notices_Manager::tpl_link(
+		__( 'Pricing', 'wpcf' ),
+		'https://toolset.com/buy/' .
+		'?utm_source=typesplugin' .
+		'&utm_campaign=moving-types-to-toolset' .
+		'&utm_medium=message-about-types-3-0' .
+		'&utm_term=pricing',
+		true
+	);
+	?>
+</p>
+
+<p>
+	<input type="checkbox" id="free-plugin-offers" name="dismiss-similar-notices[]" value="<?php echo Toolset_Admin_Notices_Manager::SIMILAR_NOTICES_FREE_PLUGIN_SHOWS_PAID_FEATURES; ?>" />
+	<label for="free-plugin-offers"><?php _e( 'Don’t show similar offers again', 'wpcf' ); ?></label>
+</p>
+
+<p>
+	<span data-toolset-dismissible="<?php echo Types_Admin_Notices_Free_Version::NOTICE_TYPES_3_0; ?>"
+          class="toolset-button toolset-button-primary"><?php _e( 'Got it', 'wpcf' ); ?></span>
+</p>
+</div>
